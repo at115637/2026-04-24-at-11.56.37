@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+<Base>
+  <header class="topbar">
+    <button class="info-btn" id="infoBtn">info</button>
+    <span class="mag-title">2026-04-24 at 11.56.37</span>
+  </header>
+
+  <main class="grid">
+    {articles.map((article) => (
+      <a href={`/articles/${article.slug}`} class="article-thumb">
+        <img
+          src={article.data.coverImage}
+          alt={article.data.title}
+          loading="lazy"
+        />
+      </a>
+    ))}
+  </main>
+
+  <div class="overlay" id="overlay">
+    <div class="blur-bg"></div>
+    <div class="info-box">
+      <p>2026-04-24 at 11.56.37 is a magazine founded by ole rohmert and kian matine. it collects fragments, fixations, and things that refuse to be categorized. it writes on what it finds.</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .topbar {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 28px 18px;
+    z-index: 10;
+  }
+  .info-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    padding: 0;
+  }
+  .info-btn:hover { color: #111; }
+  .mag-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .grid {
+    padding: 40px 28px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .article-thumb {
+    display: block;
+    width: 260px;
+    height: 260px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .article-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+  .article-thumb:hover img { opacity: 0.8; }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .overlay.active { display: flex; }
+  .blur-bg {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(28px) saturate(0.5);
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .info-box {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 300px;
+    padding: 0 24px;
+    cursor: default;
+  }
+  .info-box p {
+    font-size: 11px;
+    font-weight: 300;
+    color: #111;
+    line-height: 2;
+    letter-spacing: 0.03em;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('infoBtn');
+  const overlay = document.getElementById('overlay');
+
+  btn?.addEventListener('click', () => overlay?.classList.toggle('active'));
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay || (e.target as Element).classList.contains('blur-bg')) {
+      overlay.classList.remove('active');
+    }
+  });
+</script>
