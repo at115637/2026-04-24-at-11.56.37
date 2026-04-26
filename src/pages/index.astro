@@ -12,7 +12,7 @@ const articles = (await getCollection('articles')).sort(
     <span class="mag-title">2026-04-24 at 11.56.37</span>
   </header>
 
-  <main class="grid">
+  <main class="grid" id="mainGrid">
     {articles.map((article) => (
       <a href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
         <img
@@ -25,7 +25,6 @@ const articles = (await getCollection('articles')).sort(
   </main>
 
   <div class="overlay" id="overlay">
-    <div class="blur-bg"></div>
     <div class="info-box">
       <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects things.</p>
     </div>
@@ -68,6 +67,13 @@ const articles = (await getCollection('articles')).sort(
     flex-direction: column;
     align-items: center;
     gap: 32px;
+    transition: filter 0.3s ease;
+  }
+  .grid.blurred {
+    filter: blur(20px);
+  }
+  .topbar.blurred {
+    filter: blur(20px);
   }
   .article-thumb {
     display: block;
@@ -95,12 +101,6 @@ const articles = (await getCollection('articles')).sort(
     cursor: pointer;
   }
   .overlay.active { display: flex; }
-  .blur-bg {
-    position: absolute;
-    inset: 0;
-    backdrop-filter: blur(80px);
-    background: rgba(255, 255, 255, 0.15);
-  }
   .info-box {
     position: relative;
     z-index: 1;
@@ -121,11 +121,20 @@ const articles = (await getCollection('articles')).sort(
 <script>
   const btn = document.getElementById('infoBtn');
   const overlay = document.getElementById('overlay');
+  const grid = document.getElementById('mainGrid');
+  const topbar = document.querySelector('.topbar');
 
-  btn?.addEventListener('click', () => overlay?.classList.toggle('active'));
+  btn?.addEventListener('click', () => {
+    overlay?.classList.toggle('active');
+    grid?.classList.toggle('blurred');
+    topbar?.classList.toggle('blurred');
+  });
+
   overlay?.addEventListener('click', (e) => {
-    if (e.target === overlay || (e.target as Element).classList.contains('blur-bg')) {
+    if (e.target === overlay) {
       overlay.classList.remove('active');
+      grid?.classList.remove('blurred');
+      topbar?.classList.remove('blurred');
     }
   });
 </script>
