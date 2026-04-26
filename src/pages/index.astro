@@ -14,7 +14,7 @@ const articles = (await getCollection('articles')).sort(
 
   <main class="grid">
     {articles.map((article) => (
-      <a href={`/articles/${article.slug}`} class="article-thumb">
+      <a href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
         <img
           src={article.data.coverImage}
           alt={article.data.title}
