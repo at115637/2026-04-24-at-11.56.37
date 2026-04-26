@@ -7,5 +7,3 @@ coverImage: "/2026-04-24-at-11.56.37/media/Artikel1.jpeg"
 This playlist is dedicated to being in a hotel room, listening to music.
 
 Image: Ole Rohmert
-
-![](/2026-04-24-at-11.56.37/media/Artikel1.jpeg)
