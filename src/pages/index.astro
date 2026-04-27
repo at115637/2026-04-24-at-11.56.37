@@ -9,7 +9,7 @@ const latest = articles[0];
 ---
 <Base>
   <div class="layout">
-    <nav class="sidebar" id="sidebar">
+    <nav class="sidebar">
       <ul>
         <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
         <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
@@ -23,7 +23,7 @@ const latest = articles[0];
         <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
       </header>
 
-      <section class="hero">
+      <section class="hero" id="heroSection">
         {latest && (
           <a href={`/2026-04-24-at-11.56.37/articles/${latest.slug}`} class="hero-link">
             <div class="hero-img">
@@ -33,52 +33,40 @@ const latest = articles[0];
           </a>
         )}
       </section>
-    </main>
-  </div>
 
-  <div class="info-overlay" id="infoOverlay">
-    <div class="info-content">
-      <div class="info-section">
-        <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
-        <br/>
-        <p>Based in Paris and Munich.</p>
-        <p>Contact: <a href="mailto:info@2026-04-24.com">info@2026-04-24.com</a></p>
-      </div>
-      <div class="info-section impressum">
-        <p class="impressum-title">IMPRESSUM</p>
-        <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
-        <br/>
-        <p class="small">© 2026 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited. All images are property of their respective owners and are used with permission.</p>
-        <br/>
-        <p class="small">Datenschutz: Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt. Es findet keine Weitergabe von Daten an Dritte statt.</p>
-      </div>
-    </div>
+      <section class="info-section" id="infoSection">
+        <div class="info-content">
+          <div class="info-block">
+            <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
+            <br/>
+            <p>Based in Paris and Munich.</p>
+            <p>Contact: <a href="mailto:info@2026-04-24.com">info@2026-04-24.com</a></p>
+          </div>
+          <div class="info-block">
+            <p class="impressum-title">IMPRESSUM</p>
+            <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
+            <br/>
+            <p class="small">© 2026 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited. All images are property of their respective owners and are used with permission.</p>
+            <br/>
+            <p class="small">Datenschutz: Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt. Es findet keine Weitergabe von Daten an Dritte statt.</p>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 </Base>
 
 <style>
-  .layout {
-    display: flex;
-    min-height: 100vh;
-  }
-
-  /* SIDEBAR */
+  .layout { display: flex; min-height: 100vh; }
   .sidebar {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 140px;
     height: 100vh;
     padding: 28px 24px;
     z-index: 100;
     display: flex;
     align-items: center;
-    transition: filter 0.3s ease;
-  }
-  .sidebar.dimmed {
-    filter: blur(4px);
-    pointer-events: none;
-    opacity: 0.3;
   }
   .sidebar ul {
     list-style: none;
@@ -101,25 +89,13 @@ const latest = articles[0];
     text-align: left;
   }
   .nav-link:hover { color: #111; }
-  .nav-link.disabled {
-    color: #ddd;
-    cursor: default;
-    pointer-events: none;
-  }
-
-  /* MAIN */
+  .nav-link.disabled { color: #ddd; cursor: default; pointer-events: none; }
   .main-content {
     margin-left: 140px;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: filter 0.3s ease, opacity 0.3s ease;
-  }
-  .main-content.dimmed {
-    filter: blur(8px);
-    opacity: 0.3;
-    pointer-events: none;
   }
   .top-header {
     position: sticky;
@@ -139,17 +115,12 @@ const latest = articles[0];
     letter-spacing: 0.01em;
     text-decoration: none;
   }
-
-  /* HERO */
   .hero {
     padding: 40px 40px 80px;
     width: 100%;
     max-width: 700px;
   }
-  .hero-link {
-    display: block;
-    text-decoration: none;
-  }
+  .hero-link { display: block; text-decoration: none; }
   .hero-img {
     width: 100%;
     aspect-ratio: 4/3;
@@ -171,31 +142,19 @@ const latest = articles[0];
     color: #aaa;
     letter-spacing: 0.03em;
   }
-
-  /* INFO OVERLAY */
-  .info-overlay {
+  .info-section {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 140px;
-    right: 0;
-    bottom: 0;
-    z-index: 90;
-    overflow-y: auto;
-    background: transparent;
-    cursor: pointer;
-  }
-  .info-overlay.active { display: block; }
-  .info-content {
+    width: 100%;
     max-width: 500px;
-    margin: 0 auto;
-    padding: 80px 40px 100px;
-    cursor: default;
+    padding: 40px 40px 100px;
+  }
+  .info-section.active { display: block; }
+  .info-content {
     display: flex;
     flex-direction: column;
     gap: 60px;
   }
-  .info-section p {
+  .info-block p {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     font-weight: 300;
@@ -203,7 +162,7 @@ const latest = articles[0];
     line-height: 2;
     letter-spacing: 0.02em;
   }
-  .info-section a { color: #333; }
+  .info-block a { color: #333; }
   .impressum-title {
     font-size: 9px !important;
     letter-spacing: 0.1em !important;
@@ -219,24 +178,17 @@ const latest = articles[0];
 
 <script>
   const infoBtn = document.getElementById('infoBtn');
-  const overlay = document.getElementById('infoOverlay');
-  const mainContent = document.getElementById('mainContent');
-  const sidebar = document.getElementById('sidebar');
+  const heroSection = document.getElementById('heroSection');
+  const infoSection = document.getElementById('infoSection');
 
-  function openInfo() {
-    overlay?.classList.add('active');
-    mainContent?.classList.add('dimmed');
-    sidebar?.classList.add('dimmed');
-  }
-
-  function closeInfo() {
-    overlay?.classList.remove('active');
-    mainContent?.classList.remove('dimmed');
-    sidebar?.classList.remove('dimmed');
-  }
-
-  infoBtn?.addEventListener('click', openInfo);
-  overlay?.addEventListener('click', (e) => {
-    if (e.target === overlay) closeInfo();
+  infoBtn?.addEventListener('click', () => {
+    const isOpen = infoSection?.classList.contains('active');
+    if (isOpen) {
+      infoSection?.classList.remove('active');
+      heroSection?.classList.remove('hidden');
+    } else {
+      infoSection?.classList.add('active');
+      heroSection?.classList.add('hidden');
+    }
   });
 </script>
