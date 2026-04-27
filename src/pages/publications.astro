@@ -35,7 +35,7 @@ import Base from '../layouts/Base.astro';
   .nav-link.active { color: #111; }
   .mobile-header { display: none; }
   .page-content { margin-left: 140px; }
-  .desktop-topbar { position: sticky; top: 0; z-index: 50; display: flex; justify-content: flex-end; padding: 22px 32px 0 0; pointer-events: none; }
+  .desktop-topbar { position: fixed; top: 0; right: 0; z-index: 200; padding: 22px 32px 0 0; pointer-events: none; }
   .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
   .empty { padding: 80px 40px; }
   .empty p { font-family: 'DM Mono', monospace; font-size: 10px; color: #ddd; }
@@ -43,7 +43,7 @@ import Base from '../layouts/Base.astro';
     .sidebar { display: none; }
     .page-content { margin-left: 0; }
     .page-content { padding-top: 80px; }
-    .desktop-topbar { position: sticky; top: 0; z-index: 50; display: flex; justify-content: flex-end; padding: 22px 32px 0 0; pointer-events: none; }
+    .desktop-topbar { position: fixed; top: 0; right: 0; z-index: 200; padding: 22px 32px 0 0; pointer-events: none; }
     .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
     .page-content { padding-top: 80px; }
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
