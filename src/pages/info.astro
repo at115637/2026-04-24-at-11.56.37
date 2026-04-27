@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Info">
+  <div class="layout">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/info" class="nav-link active">INFO</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <header class="top-header">
+        <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
+      </header>
+
+      <section class="info-section">
+        <div class="info-block">
+          <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
+          <br/>
+          <p>Based in Paris and Munich.</p>
+          <p>Contact: <a href="mailto:info@2026-04-24.com">info@2026-04-24.com</a></p>
+        </div>
+        <div class="info-block">
+          <p class="impressum-title">IMPRESSUM</p>
+          <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
+          <br/>
+          <p class="small">© 2026 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited. All images are property of their respective owners and are used with permission.</p>
+          <br/>
+          <p class="small">Datenschutz: Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt. Es findet keine Weitergabe von Daten an Dritte statt.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</Base>
+
+<style>
+  .layout { display: flex; min-height: 100vh; }
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 140px;
+    height: 100vh;
+    padding: 28px 24px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .nav-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 400;
+    color: #aaa;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    display: block;
+  }
+  .nav-link:hover { color: #111; }
+  .nav-link.active { color: #111; }
+  .nav-link.disabled { color: #ddd; pointer-events: none; }
+  .main-content {
+    margin-left: 140px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 22px 28px 18px;
+    z-index: 50;
+  }
+  .mag-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .info-section {
+    padding: 40px 40px 100px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .info-block p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    color: #333;
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+  .info-block a { color: #333; }
+  .impressum-title {
+    font-size: 9px !important;
+    letter-spacing: 0.1em !important;
+    color: #aaa !important;
+    margin-bottom: 12px;
+  }
+  .small {
+    font-size: 9px !important;
+    color: #999 !important;
+    line-height: 1.8 !important;
+  }
+</style>

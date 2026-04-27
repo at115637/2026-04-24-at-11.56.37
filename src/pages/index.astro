@@ -14,16 +14,16 @@ const latest = articles[0];
         <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
         <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
         <li><a href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
-        <li><button class="nav-link info-btn" id="infoBtn">INFO</button></li>
+        <li><a href="/2026-04-24-at-11.56.37/info" class="nav-link">INFO</a></li>
       </ul>
     </nav>
 
-    <main class="main-content" id="mainContent">
+    <main class="main-content">
       <header class="top-header">
         <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
       </header>
 
-      <section class="hero" id="heroSection">
+      <section class="hero">
         {latest && (
           <a href={`/2026-04-24-at-11.56.37/articles/${latest.slug}`} class="hero-link">
             <div class="hero-img">
@@ -32,25 +32,6 @@ const latest = articles[0];
             <p class="hero-caption">{latest.data.title}</p>
           </a>
         )}
-      </section>
-
-      <section class="info-section" id="infoSection">
-        <div class="info-content">
-          <div class="info-block">
-            <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
-            <br/>
-            <p>Based in Paris and Munich.</p>
-            <p>Contact: <a href="mailto:info@2026-04-24.com">info@2026-04-24.com</a></p>
-          </div>
-          <div class="info-block">
-            <p class="impressum-title">IMPRESSUM</p>
-            <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
-            <br/>
-            <p class="small">© 2026 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited. All images are property of their respective owners and are used with permission.</p>
-            <br/>
-            <p class="small">Datenschutz: Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt. Es findet keine Weitergabe von Daten an Dritte statt.</p>
-          </div>
-        </div>
       </section>
     </main>
   </div>
@@ -81,12 +62,7 @@ const latest = articles[0];
     color: #aaa;
     text-decoration: none;
     letter-spacing: 0.06em;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
     display: block;
-    text-align: left;
   }
   .nav-link:hover { color: #111; }
   .nav-link.disabled { color: #ddd; cursor: default; pointer-events: none; }
@@ -142,53 +118,4 @@ const latest = articles[0];
     color: #aaa;
     letter-spacing: 0.03em;
   }
-  .info-section {
-    display: none;
-    width: 100%;
-    max-width: 500px;
-    padding: 40px 40px 100px;
-  }
-  .info-section.active { display: block; }
-  .info-content {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-  }
-  .info-block p {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 300;
-    color: #333;
-    line-height: 2;
-    letter-spacing: 0.02em;
-  }
-  .info-block a { color: #333; }
-  .impressum-title {
-    font-size: 9px !important;
-    letter-spacing: 0.1em !important;
-    color: #aaa !important;
-    margin-bottom: 12px;
-  }
-  .small {
-    font-size: 9px !important;
-    color: #999 !important;
-    line-height: 1.8 !important;
-  }
 </style>
-
-<script>
-  const infoBtn = document.getElementById('infoBtn');
-  const heroSection = document.getElementById('heroSection');
-  const infoSection = document.getElementById('infoSection');
-
-  infoBtn?.addEventListener('click', () => {
-    const isOpen = infoSection?.classList.contains('active');
-    if (isOpen) {
-      infoSection?.classList.remove('active');
-      heroSection?.classList.remove('hidden');
-    } else {
-      infoSection?.classList.add('active');
-      heroSection?.classList.add('hidden');
-    }
-  });
-</script>
