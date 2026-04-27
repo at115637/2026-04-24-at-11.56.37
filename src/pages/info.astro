@@ -20,9 +20,6 @@ import Base from '../layouts/Base.astro';
     </nav>
   </div>
   <div class="page-content">
-    <div class="desktop-topbar">
-      <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
-    </div>
     <section class="info-section">
       <div class="info-block">
         <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
@@ -50,8 +47,7 @@ import Base from '../layouts/Base.astro';
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .mobile-header { display: none; }
-  .page-content { margin-left: 140px; }
-  .desktop-topbar { position: fixed; top: 0; right: 0; z-index: 200; padding: 22px 32px 0 0; pointer-events: none; }
+  .page-content { margin-left: 140px; padding-top: 60px; }
   .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
   .info-section { padding: 20px 40px 100px; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; }
   .info-block p { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #333; line-height: 2; }
@@ -63,7 +59,6 @@ import Base from '../layouts/Base.astro';
     .sidebar { display: none; }
     .page-content { margin-left: 0; }
     .page-content { padding-top: 80px; }
-    .desktop-topbar { position: fixed; top: 0; right: 0; z-index: 200; padding: 22px 32px 0 0; pointer-events: none; }
     .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
     .page-content { padding-top: 80px; }
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }

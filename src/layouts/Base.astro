@@ -20,9 +20,25 @@ const { title } = Astro.props;
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
+    #site-title {
+      position: fixed;
+      top: 22px;
+      right: 32px;
+      z-index: 300;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: #111;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      #site-title { display: none; }
+    }
   </style>
 </head>
 <body>
+  <a id="site-title" href="/2026-04-24-at-11.56.37/">2026-04-24 at 11.56.37</a>
   <slot />
 </body>
 </html>
