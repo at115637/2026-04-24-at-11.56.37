@@ -10,24 +10,24 @@ const articles = (await getCollection('articles')).sort(
   <div class="layout">
     <nav class="sidebar">
       <ul>
-        <li><a href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
-        <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link active">ARTICLES</a></li>
-        <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled ">PUBLICATIONS</a></li>
-        <li><a href="/2026-04-24-at-11.56.37/info" class="nav-link">INFO</a></li>
+        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/search" data-astro-reload class="nav-link">SEARCH</a></li>
+        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/articles" data-astro-reload class="nav-link active">ARTICLES</a></li>
+        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/publications" data-astro-reload class="nav-link disabled ">PUBLICATIONS</a></li>
+        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/info" data-astro-reload class="nav-link">INFO</a></li>
       </ul>
     </nav>
     <main class="main-content">
       <div class="mobile-header">
-        <a href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
+        <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
         <nav class="mobile-nav">
-          <a href="/2026-04-24-at-11.56.37/search">SEARCH</a>
-          <a href="/2026-04-24-at-11.56.37/articles" class="active">ARTICLES</a>
-          <a href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBLICATIONS</a>
-          <a href="/2026-04-24-at-11.56.37/info">INFO</a>
+          <a data-astro-reload href="/2026-04-24-at-11.56.37/search">SEARCH</a>
+          <a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="active">ARTICLES</a>
+          <a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBLICATIONS</a>
+          <a data-astro-reload href="/2026-04-24-at-11.56.37/info">INFO</a>
         </nav>
       </div>
       <header class="top-header">
-        <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
+        <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
       </header>
       <section class="grid">
         {articles.map((article) => (
