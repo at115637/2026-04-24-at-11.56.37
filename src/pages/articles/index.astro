@@ -58,16 +58,19 @@ const articles = (await getCollection('articles')).sort(
   .article-thumb:hover img { opacity: 0.8; }
 
   @media (max-width: 600px) {
+    body { overflow-x: hidden; }
     .sidebar { display: none; }
     .main-content { margin-left: 0; }
     .top-header { display: none; }
     .mobile-header { position: sticky; top: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; padding: 16px 20px 0; pointer-events: none; }
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; margin-bottom: 10px; }
-    .mobile-nav { display: flex; justify-content: space-around; width: 100%; pointer-events: all; padding-bottom: 10px; }
-    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0.06em; text-decoration: none; }
+    .mobile-nav { display: flex; justify-content: center;
+      gap: 20px;
+      overflow-x: hidden; width: 100%; pointer-events: all; padding-bottom: 10px; }
+    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
-    .article-thumb { width: 200px; height: 200px; }
+    .article-thumb { width: 80vw; max-width: 260px; height: 80vw; max-height: 260px; }
     .grid { padding: 20px 20px 60px; gap: 24px; }
   }
   @media (min-width: 601px) { .mobile-header { display: none; } }
