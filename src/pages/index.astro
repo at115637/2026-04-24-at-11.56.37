@@ -5,136 +5,226 @@ import { getCollection } from 'astro:content';
 const articles = (await getCollection('articles')).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
+const latest = articles[0];
 ---
 <Base>
-  <header class="topbar">
-    <button class="info-btn" id="infoBtn">info</button>
-    <span class="mag-title">2026-04-24 at 11.56.37</span>
-  </header>
+  <div class="layout">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
+        <li><button class="nav-link info-btn" id="infoBtn">INFO</button></li>
+      </ul>
+    </nav>
 
-  <main class="grid" id="mainGrid">
-    {articles.map((article) => (
-      <a href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
-        <img
-          src={article.data.coverImage}
-          alt={article.data.title}
-          loading="lazy"
-        />
-      </a>
-    ))}
-  </main>
+    <main class="main-content">
+      <header class="top-header">
+        <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
+      </header>
+
+      <section class="hero">
+        {latest && (
+          <a href={`/2026-04-24-at-11.56.37/articles/${latest.slug}`} class="hero-link">
+            <div class="hero-img">
+              <img src={latest.data.coverImage} alt={latest.data.title} />
+            </div>
+            <p class="hero-caption">{latest.data.title}</p>
+          </a>
+        )}
+      </section>
+    </main>
+  </div>
 
   <div class="overlay" id="overlay">
-    <div class="info-box">
-      <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects things.</p>
+    <div class="info-content">
+      <div class="info-inner">
+        <div class="info-section">
+          <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
+          <br/>
+          <p>Based in Paris and Munich.</p>
+          <p>Contact: <a href="mailto:info@2026-04-24.com">info@2026-04-24.com</a></p>
+        </div>
+        <div class="info-section impressum">
+          <p class="impressum-title">Impressum</p>
+          <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
+          <br/>
+          <p class="small">© 2026 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited. All images are property of their respective owners and are used with permission.</p>
+          <br/>
+          <p class="small">Datenschutz: Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt. Es findet keine Weitergabe von Daten an Dritte statt.</p>
+        </div>
+      </div>
+      <button class="close-btn" id="closeBtn">×</button>
     </div>
   </div>
 </Base>
 
 <style>
-  .topbar {
-    position: sticky;
-    top: 0;
-    background: #fff;
+  .layout {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 28px 18px;
-    z-index: 10;
+    min-height: 100vh;
   }
-  .info-btn {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 100vh;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 100;
+  }
+  .sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 60px;
+  }
+  .nav-link {
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 300;
+    font-size: 10px;
+    font-weight: 400;
     color: #aaa;
+    text-decoration: none;
+    letter-spacing: 0.06em;
     background: none;
     border: none;
     cursor: pointer;
-    letter-spacing: 0.03em;
     padding: 0;
+    display: block;
+    text-align: left;
   }
-  .info-btn:hover { color: #111; }
+  .nav-link:hover { color: #111; }
+  .nav-link.disabled {
+    color: #ddd;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .main-content {
+    margin-left: 140px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 22px 28px 18px;
+    z-index: 50;
+  }
   .mag-title {
     font-family: 'DM Mono', monospace;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.01em;
     color: #111;
+    letter-spacing: 0.01em;
+    text-decoration: none;
   }
-  .grid {
-    padding: 40px 28px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    transition: filter 0.3s ease;
+
+  .hero {
+    padding: 40px 40px 80px;
+    width: 100%;
+    max-width: 700px;
   }
-  .grid.blurred {
-    filter: blur(10px);
-  }
-  .topbar.blurred {
-    filter: blur(20px);
-  }
-  .article-thumb {
+  .hero-link {
     display: block;
-    width: 260px;
-    height: 260px;
-    overflow: hidden;
-    cursor: pointer;
+    text-decoration: none;
   }
-  .article-thumb img {
+  .hero-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .hero-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: opacity 0.2s ease;
   }
-  .article-thumb:hover img { opacity: 0.8; }
+  .hero-link:hover .hero-img img { opacity: 0.85; }
+  .hero-caption {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: #aaa;
+    letter-spacing: 0.03em;
+  }
 
+  /* INFO OVERLAY */
   .overlay {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 20;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    background: #fff;
+    z-index: 200;
+    overflow-y: auto;
   }
-  .overlay.active { display: flex; }
-  .info-box {
+  .overlay.active { display: block; }
+  .info-content {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
     position: relative;
-    z-index: 1;
-    text-align: center;
-    max-width: 300px;
-    padding: 0 24px;
-    cursor: default;
   }
-  .info-box p {
+  .close-btn {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    font-weight: 300;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .close-btn:hover { color: #111; }
+  .info-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .info-section p {
+    font-family: 'DM Mono', monospace;
     font-size: 11px;
     font-weight: 300;
-    color: #111;
+    color: #333;
     line-height: 2;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
+  }
+  .info-section a {
+    color: #333;
+  }
+  .impressum-title {
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+    color: #aaa !important;
+    margin-bottom: 12px;
+  }
+  .small {
+    font-size: 9px !important;
+    color: #999 !important;
+    line-height: 1.8 !important;
   }
 </style>
 
 <script>
-  const btn = document.getElementById('infoBtn');
+  const infoBtn = document.getElementById('infoBtn');
+  const closeBtn = document.getElementById('closeBtn');
   const overlay = document.getElementById('overlay');
-  const grid = document.getElementById('mainGrid');
-  const topbar = document.querySelector('.topbar');
 
-  btn?.addEventListener('click', () => {
-    overlay?.classList.toggle('active');
-    grid?.classList.toggle('blurred');
-    topbar?.classList.toggle('blurred');
-  });
-
-  overlay?.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      overlay.classList.remove('active');
-      grid?.classList.remove('blurred');
-      topbar?.classList.remove('blurred');
-    }
-  });
+  infoBtn?.addEventListener('click', () => overlay?.classList.add('active'));
+  closeBtn?.addEventListener('click', () => overlay?.classList.remove('active'));
 </script>

@@ -2,22 +2,15 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-export async function getStaticPaths() {
-  const articles = await getCollection('articles');
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article },
-  }));
-}
-
-const { article } = Astro.props;
-const { Content } = await article.render();
+const articles = (await getCollection('articles')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
-<Base title={article.data.title}>
+<Base title="Articles">
   <div class="layout">
     <nav class="sidebar">
       <ul>
-        <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link active">ARTICLES</a></li>
         <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
         <li><a href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
         <li><a href="/2026-04-24-at-11.56.37/" class="nav-link">INFO</a></li>
@@ -28,15 +21,13 @@ const { Content } = await article.render();
       <header class="top-header">
         <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
       </header>
-
-      <article class="article-content">
-        <div class="cover">
-          <img src={article.data.coverImage} alt={article.data.title} />
-        </div>
-        <div class="body">
-          <Content />
-        </div>
-      </article>
+      <section class="grid">
+        {articles.map((article) => (
+          <a href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
+            <img src={article.data.coverImage} alt={article.data.title} loading="lazy" />
+          </a>
+        ))}
+      </section>
     </main>
   </div>
 </Base>
@@ -68,6 +59,7 @@ const { Content } = await article.render();
     display: block;
   }
   .nav-link:hover { color: #111; }
+  .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .main-content {
     margin-left: 140px;
@@ -94,44 +86,25 @@ const { Content } = await article.render();
     letter-spacing: 0.01em;
     text-decoration: none;
   }
-  .article-content {
-    max-width: 560px;
-    width: 100%;
-    padding: 40px 40px 100px;
+  .grid {
+    padding: 40px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
   }
-  .cover {
-    width: 100%;
-    aspect-ratio: 4/3;
+  .article-thumb {
+    display: block;
+    width: 260px;
+    height: 260px;
     overflow: hidden;
-    margin-bottom: 40px;
   }
-  .cover img {
+  .article-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.2s ease;
   }
-  .body {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 300;
-    color: #444;
-    line-height: 2;
-    letter-spacing: 0.02em;
-  }
-  .body h1, .body h2, .body h3 {
-    font-size: 12px;
-    font-weight: 400;
-    color: #111;
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-  .body p { margin-bottom: 20px; }
-  .body img { display: none; }
-  .body audio, .body video {
-    width: 100%;
-    margin: 32px 0;
-    display: block;
-  }
-  .body audio { filter: grayscale(1); }
+  .article-thumb:hover img { opacity: 0.8; }
 </style>

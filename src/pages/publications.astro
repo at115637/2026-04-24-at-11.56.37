@@ -1,42 +1,23 @@
 ---
-import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
-
-export async function getStaticPaths() {
-  const articles = await getCollection('articles');
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article },
-  }));
-}
-
-const { article } = Astro.props;
-const { Content } = await article.render();
+import Base from '../layouts/Base.astro';
 ---
-<Base title={article.data.title}>
+<Base title="Publications">
   <div class="layout">
     <nav class="sidebar">
       <ul>
         <li><a href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
-        <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+        <li><a href="/2026-04-24-at-11.56.37/publications" class="nav-link active">PUBLICATIONS</a></li>
         <li><a href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
         <li><a href="/2026-04-24-at-11.56.37/" class="nav-link">INFO</a></li>
       </ul>
     </nav>
-
     <main class="main-content">
       <header class="top-header">
         <a href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
       </header>
-
-      <article class="article-content">
-        <div class="cover">
-          <img src={article.data.coverImage} alt={article.data.title} />
-        </div>
-        <div class="body">
-          <Content />
-        </div>
-      </article>
+      <section class="empty">
+        <p>coming soon</p>
+      </section>
     </main>
   </div>
 </Base>
@@ -68,7 +49,7 @@ const { Content } = await article.render();
     display: block;
   }
   .nav-link:hover { color: #111; }
-  .nav-link.disabled { color: #ddd; pointer-events: none; }
+  .nav-link.active { color: #111; }
   .main-content {
     margin-left: 140px;
     flex: 1;
@@ -94,44 +75,13 @@ const { Content } = await article.render();
     letter-spacing: 0.01em;
     text-decoration: none;
   }
-  .article-content {
-    max-width: 560px;
-    width: 100%;
-    padding: 40px 40px 100px;
+  .empty {
+    padding: 80px 40px;
   }
-  .cover {
-    width: 100%;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-  .cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .body {
+  .empty p {
     font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 300;
-    color: #444;
-    line-height: 2;
-    letter-spacing: 0.02em;
+    font-size: 10px;
+    color: #ddd;
+    letter-spacing: 0.06em;
   }
-  .body h1, .body h2, .body h3 {
-    font-size: 12px;
-    font-weight: 400;
-    color: #111;
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-  .body p { margin-bottom: 20px; }
-  .body img { display: none; }
-  .body audio, .body video {
-    width: 100%;
-    margin: 32px 0;
-    display: block;
-  }
-  .body audio { filter: grayscale(1); }
 </style>
