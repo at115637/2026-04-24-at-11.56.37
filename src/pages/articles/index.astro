@@ -7,65 +7,82 @@ const articles = (await getCollection('articles')).sort(
 );
 ---
 <Base title="Articles">
-  <div class="layout">
-    <nav class="sidebar">
-      <ul>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="nav-link active">ARTICLES</a></li>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/info" class="nav-link">INFO</a></li>
-      </ul>
+  <div class="sidebar">
+    <ul>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="nav-link active">ARTICLES</a></li>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/info" class="nav-link">INFO</a></li>
+    </ul>
+  </div>
+
+  <div class="mobile-header">
+    <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
+    <nav class="mobile-nav">
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/search">SEARCH</a>
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="active">ARTICLES</a>
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBL.</a>
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/info">INFO</a>
     </nav>
-    <main class="main-content">
-      <div class="mobile-header">
-        <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
-        <nav class="mobile-nav">
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/search">SEARCH</a>
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="active">ARTICLES</a>
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBLICATIONS</a>
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/info">INFO</a>
-        </nav>
-      </div>
-      <header class="top-header">
-        <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
-      </header>
-      <section class="grid">
-        {articles.map((article) => (
-          <a data-astro-reload href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
-            <img src={article.data.coverImage} alt={article.data.title} loading="lazy" />
-            <p class="article-caption">{article.data.title}</p>
-          </a>
-        ))}
-      </section>
-    </main>
+  </div>
+
+  <div class="page-content">
+    <div class="desktop-logo-wrap">
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
+    </div>
+    <section class="grid">
+      {articles.map((article) => (
+        <a data-astro-reload href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
+          <img src={article.data.coverImage} alt={article.data.title} loading="lazy" />
+          <p class="article-caption">{article.data.title}</p>
+        </a>
+      ))}
+    </section>
   </div>
 </Base>
 
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  .layout { display: flex; min-height: 100vh; }
+
   .sidebar { position: fixed; top: 0; left: 0; width: 140px; height: 100vh; padding: 28px 24px; z-index: 100; display: flex; align-items: center; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 400; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
+  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
   .nav-link:hover { color: #111; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
-  .main-content { margin-left: 140px; flex: 1; display: flex; flex-direction: column; align-items: center; }
-  .top-header { position: sticky; top: 0; background: transparent; width: 100%; display: flex; justify-content: center; padding: 22px 28px 18px; z-index: 50; pointer-events: none; }
+
+  .mobile-header { display: none; }
+
+  .page-content { margin-left: 140px; }
+
+  .desktop-logo-wrap { position: sticky; top: 0; z-index: 50; display: flex; justify-content: center; padding: 22px 0 18px; pointer-events: none; }
   .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
-  .grid { padding: 40px 40px 80px; display: flex; flex-direction: column; align-items: center; gap: 40px; width: 100%; max-width: 700px; }
+
+  .grid { padding: 20px 40px 80px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
   .article-thumb { display: block; width: 260px; text-decoration: none; }
-  .article-thumb img { width: 260px; height: 260px; object-fit: cover; display: block; transition: opacity 0.2s ease; }
+  .article-thumb img { width: 260px; height: 260px; object-fit: cover; display: block; transition: opacity 0.2s; }
   .article-thumb:hover img { opacity: 0.8; }
-  .article-caption { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300; color: #aaa; letter-spacing: 0.02em; margin-top: 10px; }
+  .article-caption { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300; color: #aaa; margin-top: 10px; }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .main-content { margin-left: 0; overflow-x: hidden; }
-    .top-header { display: none; }
-    .mobile-header { position: sticky; top: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; padding: 16px 20px 0; background: #fff; }
-    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; margin-bottom: 10px; }
-    .mobile-nav { display: flex; justify-content: center; gap: 20px; width: 100%; pointer-events: all; padding-bottom: 10px; overflow-x: hidden; }
+    .page-content { margin-left: 0; }
+    .desktop-logo-wrap { display: none; }
+
+    .mobile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      padding: 14px 20px 10px;
+      width: 100%;
+    }
+    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
+    .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
@@ -73,5 +90,4 @@ const articles = (await getCollection('articles')).sort(
     .article-thumb { width: 80vw; }
     .article-thumb img { width: 80vw; height: 80vw; }
   }
-  @media (min-width: 601px) { .mobile-header { display: none; } }
 </style>

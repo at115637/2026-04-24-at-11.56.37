@@ -1,46 +1,37 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-
 const articles = await getCollection('articles');
-const articlesData = articles.map((article) => ({
-  slug: article.slug,
-  title: article.data.title,
-  date: article.data.date,
-  body: article.body,
-}));
+const articlesData = articles.map((a) => ({ slug: a.slug, title: a.data.title, body: a.body }));
 ---
 <Base title="Search">
-  <div class="layout">
-    <nav class="sidebar">
-      <ul>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/search" data-astro-reload class="nav-link active">SEARCH</a></li>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/articles" data-astro-reload class="nav-link">ARTICLES</a></li>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/publications" data-astro-reload class="nav-link disabled ">PUBLICATIONS</a></li>
-        <li><a data-astro-reload href="/2026-04-24-at-11.56.37/info" data-astro-reload class="nav-link">INFO</a></li>
-      </ul>
+  <div class="sidebar">
+    <ul>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/search" class="nav-link active">SEARCH</a></li>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="nav-link">ARTICLES</a></li>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/info" class="nav-link">INFO</a></li>
+    </ul>
+  </div>
+  <div class="mobile-header">
+    <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
+    <nav class="mobile-nav">
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/search" class="active">SEARCH</a>
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/articles">ARTICLES</a>
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBL.</a>
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/info">INFO</a>
     </nav>
-    <main class="main-content">
-      <div class="mobile-header">
-        <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
-        <nav class="mobile-nav">
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/search" class="active">SEARCH</a>
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/articles">ARTICLES</a>
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBLICATIONS</a>
-          <a data-astro-reload href="/2026-04-24-at-11.56.37/info">INFO</a>
-        </nav>
-      </div>
-      <header class="top-header">
-        <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
-      </header>
-      <section class="search-section">
-        <input type="text" id="searchInput" placeholder="search..." autocomplete="off" />
-        <div id="results" class="results"></div>
-      </section>
-    </main>
+  </div>
+  <div class="page-content">
+    <div class="desktop-logo-wrap">
+      <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
+    </div>
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="search..." autocomplete="off" />
+      <div id="results" class="results"></div>
+    </section>
   </div>
 </Base>
-
 <script define:vars={{ articlesData }}>
   const input = document.getElementById('searchInput');
   const results = document.getElementById('results');
@@ -49,56 +40,47 @@ const articlesData = articles.map((article) => ({
     const q = input.value.toLowerCase().trim();
     results.innerHTML = '';
     if (!q) return;
-    const matches = articlesData.filter(a =>
-      a.title.toLowerCase().includes(q) || a.body.toLowerCase().includes(q)
-    );
-    if (matches.length === 0) {
-      results.innerHTML = '<p class="no-results">no results</p>';
-      return;
-    }
+    const matches = articlesData.filter(a => a.title.toLowerCase().includes(q) || a.body.toLowerCase().includes(q));
+    if (!matches.length) { results.innerHTML = '<p class="no-results">no results</p>'; return; }
     matches.forEach(a => {
       const el = document.createElement('a');
       el.href = `${base}/articles/${a.slug}`;
       el.className = 'result-item';
+      el.setAttribute('data-astro-reload', '');
       el.textContent = a.title;
       results.appendChild(el);
     });
   });
 </script>
-
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  .layout { display: flex; min-height: 100vh; }
   .sidebar { position: fixed; top: 0; left: 0; width: 140px; height: 100vh; padding: 28px 24px; z-index: 100; display: flex; align-items: center; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 400; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
+  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
   .nav-link:hover { color: #111; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
-  .main-content { margin-left: 140px; flex: 1; display: flex; flex-direction: column; align-items: center; }
-  .top-header { position: sticky; top: 0; background: transparent; width: 100%; display: flex; justify-content: center; padding: 22px 28px 18px; z-index: 50; pointer-events: none; }
+  .mobile-header { display: none; }
+  .page-content { margin-left: 140px; }
+  .desktop-logo-wrap { position: sticky; top: 0; z-index: 50; display: flex; justify-content: center; padding: 22px 0 18px; pointer-events: none; }
   .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
-  .search-section { padding: 40px 40px 80px; width: 100%; max-width: 500px; }
-  #searchInput { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; border: none; border-bottom: 0.5px solid #ddd; outline: none; width: 100%; padding: 8px 0; background: transparent; letter-spacing: 0.03em; }
+  .search-section { padding: 20px 40px 80px; max-width: 500px; margin: 0 auto; }
+  #searchInput { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; border: none; border-bottom: 0.5px solid #ddd; outline: none; width: 100%; padding: 8px 0; background: transparent; }
   #searchInput::placeholder { color: #ccc; }
   .results { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
-  .result-item { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; text-decoration: none; letter-spacing: 0.02em; display: block; }
+  .result-item { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; text-decoration: none; display: block; }
   .result-item:hover { font-style: italic; }
-  .no-results { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; letter-spacing: 0.04em; }
-
+  .no-results { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .main-content { margin-left: 0; }
-    .top-header { display: none; }
-    .mobile-header { position: sticky; top: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; padding: 16px 20px 0; background: #fff; }
-    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; margin-bottom: 10px; }
-    .mobile-nav { display: flex; justify-content: center;
-      gap: 20px;
-      overflow-x: hidden; width: 100%; pointer-events: all; padding-bottom: 10px; }
+    .page-content { margin-left: 0; }
+    .desktop-logo-wrap { display: none; }
+    .mobile-header { display: flex; flex-direction: column; align-items: center; position: -webkit-sticky; position: sticky; top: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
+    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
+    .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .search-section { padding: 20px 20px 60px; }
   }
-  @media (min-width: 601px) { .mobile-header { display: none; } }
 </style>
