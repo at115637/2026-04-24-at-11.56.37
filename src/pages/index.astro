@@ -28,7 +28,7 @@ const latest = articles[0];
   </div>
 
   <div class="page-content">
-    <div class="desktop-logo-wrap">
+    <div class="desktop-topbar">
       <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mag-title">2026-04-24 at 11.56.37</a>
     </div>
     <section class="hero">
@@ -62,15 +62,20 @@ const latest = articles[0];
 
   .mobile-header { display: none; }
 
-  .page-content { margin-left: 140px; }
+  .page-content {
+    margin-left: 140px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
-  .desktop-logo-wrap {
+  .desktop-topbar {
     position: sticky;
     top: 0;
     z-index: 50;
     display: flex;
-    justify-content: center;
-    padding: 22px 0 18px;
+    justify-content: flex-end;
+    padding: 22px 32px 0 0;
     pointer-events: none;
   }
   .mag-title {
@@ -83,42 +88,40 @@ const latest = articles[0];
     pointer-events: all;
   }
 
-  .hero { padding: 20px 40px 80px; display: flex; justify-content: center; }
-  .hero-link { display: block; text-decoration: none; max-width: 560px; width: 100%; }
+  .hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px 60px;
+  }
+  .hero-link { display: block; text-decoration: none; width: 100%; max-width: 560px; }
   .hero-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
   .hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
   .hero-link:hover img { opacity: 0.85; }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .page-content { margin-left: 0; }
-    .page-content { padding-top: 80px; }
-    .desktop-logo-wrap { display: none; }
+    .page-content { margin-left: 0; padding-top: 80px; min-height: auto; flex-direction: column; }
+    .desktop-topbar { display: none; }
 
-    .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
-    .mobile-logo {
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      font-weight: 500;
-      color: #111;
-      text-decoration: none;
-      margin-bottom: 10px;
-    }
-    .mobile-nav {
+    .mobile-header {
       display: flex;
-      justify-content: center;
-      gap: 16px;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: #fff;
+      padding: 14px 20px 10px;
       width: 100%;
     }
-    .mobile-nav a {
-      font-family: 'DM Mono', monospace;
-      font-size: 9px;
-      color: #aaa;
-      letter-spacing: 0;
-      text-decoration: none;
-    }
+    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
+    .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
+    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
-    .hero { padding: 20px 20px 60px; }
+
+    .hero { padding: 20px 20px 60px; align-items: flex-start; }
   }
 </style>
