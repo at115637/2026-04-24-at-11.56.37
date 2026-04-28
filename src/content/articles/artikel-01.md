@@ -10,7 +10,7 @@ This playlist is dedicated to being in a hotel room, listening to music.
 - Composition 1960 No. 7 — La Monte Young, Jeroen van Veen
 - PO — Triad God
 - Helt Ensam (Outro) — Yung Lean
-- Forever young — Shooting stars
+- Forever United — Shooting stars
 - Wilma — Jimi Pop was always right
 - Elysia Crampton — Tie Me E bootleg
 - Rented Starship — Rooster
