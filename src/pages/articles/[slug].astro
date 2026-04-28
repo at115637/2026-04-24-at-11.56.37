@@ -47,6 +47,14 @@ const { Content } = await article.render();
       </div>
     </article>
   </div>
+
+<script>
+  document.querySelectorAll('.body a[href^="http"]').forEach(a => {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+
 </Base>
 
 <style>
@@ -68,17 +76,27 @@ const { Content } = await article.render();
   .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .image-credit { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 300; color: #bbb; letter-spacing: 0.03em; text-align: right; margin-top: 5px; }
 
-  .article-title { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 400; color: #111; line-height: 1.5; margin-top: 16px; margin-bottom: 4px; }
+  .article-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+    line-height: 1.3;
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
 
   .body { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #444; line-height: 2; }
-  .body > :global(p:first-child) {
+
+  .body :global(p:first-child) {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
-    font-weight: 400;
-    color: #111;
-    margin-bottom: 4px;
+    font-weight: 300;
+    color: #999;
+    margin-bottom: 24px;
     line-height: 1.6;
   }
+
   .body p { margin-bottom: 20px; }
   .body img { display: none; }
   .body audio, .body video { width: 100%; margin: 32px 0; display: block; }
@@ -107,7 +125,7 @@ const { Content } = await article.render();
     text-decoration: none;
   }
   .body ol li a:hover, .body ul li a:hover {
-    color: #666;
+    color: #888;
   }
 
   @media (max-width: 600px) {
