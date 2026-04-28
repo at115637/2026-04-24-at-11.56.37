@@ -50,7 +50,7 @@ const articles = (await getCollection('articles')).sort(
 
   .mobile-header { display: none; }
 
-  .page-content { margin-left: 140px; padding-top: 60px; }
+  .page-content { }
   .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
 
   .grid { padding: 20px 40px 80px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
@@ -61,7 +61,7 @@ const articles = (await getCollection('articles')).sort(
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .page-content { margin-left: 0; }
+
     .page-content { padding-top: 80px; }
 
     .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
