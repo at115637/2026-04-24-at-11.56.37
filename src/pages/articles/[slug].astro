@@ -62,7 +62,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
       </div>
 
       {/* 6. Back to top — am Ende langer Artikel */}
-      <a href="#top" class="back-to-top" id="back-to-top-link">↑ Back to top</a>
+      <a href="#top" class="back-to-top" id="back-to-top-link" aria-label="Back to top">↑</a>
     </article>
   </div>
 </Base>
@@ -121,16 +121,16 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     margin-top: 5px;
   }
 
-  /* 1. Überschrift: fett, größer, klar als Titel lesbar */
+  /* 1. Überschrift: fett, klar als Titel lesbar — kompakter, näher am Bild */
   .article-title {
     font-family: 'DM Mono', monospace !important;
-    font-size: 26px !important;
+    font-size: 18px !important;
     font-weight: 700 !important;
     color: #111 !important;
-    line-height: 1.15 !important;
-    margin-top: 28px !important;
-    margin-bottom: 6px !important;
-    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+    margin-top: 14px !important;
+    margin-bottom: 4px !important;
+    letter-spacing: -0.005em !important;
   }
 
   /* 4. Datum direkt unter dem Titel, ausgegraut */
@@ -140,7 +140,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     font-weight: 300;
     color: #bbb;
     letter-spacing: 0.04em;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     line-height: 1.4;
   }
 
@@ -167,41 +167,40 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   .body audio, .body video { width: 100%; margin: 32px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
+  /* Songliste: normale Schrift wie Body-Text, hover wird grau */
   .body ol, .body ul {
     list-style: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 8px !important;
-    margin: 40px 0 !important;
+    display: block !important;
+    margin: 24px 0 !important;
     padding: 0 !important;
   }
   .body ol li, .body ul li {
-    font-family: 'IM Fell English', serif !important;
-    font-size: 16px !important;
-    font-style: italic !important;
-    color: #222 !important;
-    text-align: center !important;
-    line-height: 1.5 !important;
+    font-family: 'DM Mono', monospace !important;
+    font-size: 11px !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    color: #444 !important;
+    text-align: left !important;
+    line-height: 2 !important;
     list-style: none !important;
   }
 
   /* 2. Song-Links: keine Standard-Link-Optik (nicht blau, nicht unterstrichen)
-        und werden beim Hover dunkel */
+        und werden beim Hover grau */
   .body a {
     color: inherit !important;
     text-decoration: none !important;
     transition: color 0.15s !important;
   }
   .body ol li a, .body ul li a {
-    color: #222 !important;
+    color: #444 !important;
     text-decoration: none !important;
     transition: color 0.15s !important;
   }
   .body a:hover,
   .body ol li a:hover,
   .body ul li a:hover {
-    color: #000 !important;
+    color: #aaa !important;
   }
 
   /* 6. Back to top — am Ende langer Artikel */
@@ -254,11 +253,11 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
 
     /* Etwas kleinerer Titel auf Mobile, bleibt aber klar als Headline lesbar */
     .article-title {
-      font-size: 22px !important;
-      margin-top: 22px !important;
+      font-size: 16px !important;
+      margin-top: 12px !important;
     }
     .article-date {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
   }
 </style>
