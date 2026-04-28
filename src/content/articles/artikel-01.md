@@ -6,7 +6,6 @@ imageCredit: "Image: Ole Rohmert"
 ---
 This playlist is dedicated to being in a hotel room, listening to music.
 
-<<<<<<< HEAD
 I collected these songs thinking about my last stay in a hotel.
 I was so seduced by this safe world around me, it was like living with my parents how I imagine it when I was like 4.
 
@@ -24,26 +23,4 @@ I was so seduced by this safe world around me, it was like living with my parent
 - [vio lino — love song for a prayer](https://soundcloud.com/ekko-doomdale/love-song-for-a-prayer-1)
 - [Bonewhiteglory — Nature and Organisation (feat. Current93, Rose Mcdowall)](https://soundcloud.com/zahar_kashmar/bonewhiteglory)
 - [BLACK KRAY — 7 TEARZ 7 DOVES 7 BLUNTS (PROD. BY TRIAD$) [GOTH LUV] (2014)](https://soundcloud.com/blackkraymusic/7-tearz-7-doves-7-blunts-prod-by-triad)
-=======
-I collected these songs thinking about my last stay in a hotel. 
-I was so seduced by this safe world around me, it was like living with my parents how I imagine it when I was like 4.
-
-
-
-
-- Composition 1960 No. 7 — La Monte Young, Jeroen van Veen
-- PO — Triad God
-- Helt Ensam (Outro) — Yung Lean
-- Forever United — Shooting stars
-- Wilma — Jimi Pop was always right
-- Elysia Crampton — Tie Me E bootleg
-- Rented Starship — Rooster
-- Love — Mica Levi
-- 75pound — Palmistry and Sleeo7
-- belmont girl — I remember
-- i.v & Detente — Pet Sitting (B Side)
-- vio lino — love song for a prayer
-- Bonewhiteglory — Nature and Organisation (feat. Current93, Rose Mcdowall)
-- BLACK KRAY — 7 TEARZ 7 DOVES 7 BLUNTS (PROD. BY TRIAD$) [GOTH LUV] (2014)
->>>>>>> 59274b5aea38660417c039a934caa9445fbf3521
 - Goldberg Variations, BWV 988: Aria — Johann Sebastian Bach, Glenn Gould
