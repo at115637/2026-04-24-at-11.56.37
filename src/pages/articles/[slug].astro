@@ -13,9 +13,13 @@ export async function getStaticPaths() {
 const { article } = Astro.props;
 const { Content } = await article.render();
 
-// Format date
+// Format date — shown directly below the title, greyed out
 const dateObj = new Date(article.data.date);
-const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+const formattedDate = dateObj.toLocaleDateString('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+});
 ---
 <Base title={article.data.title}>
   <div class="sidebar">
@@ -35,7 +39,8 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
       <a data-astro-reload href="/info">INFO</a>
     </nav>
   </div>
-  <div class="page-content">
+
+  <div id="top" class="page-content">
     <article class="article-content">
       <div class="cover-wrap">
         <div class="cover">
@@ -45,24 +50,38 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
           <p class="image-credit">{article.data.imageCredit}</p>
         )}
       </div>
-      <!-- 1. Überschrift fett, groß; 4. Datum direkt darunter ausgegraut -->
+
+      {/* 1. Überschrift fett, groß, klar als Titel lesbar */}
       <h1 class="article-title">{article.data.title}</h1>
+
+      {/* 4. Datum direkt unter dem Titel, ausgegraut */}
       <p class="article-date">{formattedDate}</p>
+
       <div class="body">
         <Content />
       </div>
-      <!-- 6. Back to top -->
-      <a href="#top" class="back-to-top">↑ Back to top</a>
+
+      {/* 6. Back to top — am Ende langer Artikel */}
+      <a href="#top" class="back-to-top" id="back-to-top-link">↑ Back to top</a>
     </article>
   </div>
 </Base>
 
 <script>
-  // 3. Open all links in new tab
-  document.querySelectorAll('.body a').forEach(a => {
+  // 3. Alle externen Links im Artikel-Body in neuem Tab öffnen
+  document.querySelectorAll('.body a[href^="http"]').forEach((a) => {
     a.setAttribute('target', '_blank');
     a.setAttribute('rel', 'noopener noreferrer');
   });
+
+  // 6. Back-to-top: sanftes Scrollen nach oben
+  const backLink = document.getElementById('back-to-top-link');
+  if (backLink) {
+    backLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 </script>
 
 <style is:global>
@@ -70,10 +89,20 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* Sidebar / Navigation */
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #333; }
+  .nav-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #aaa;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    display: block;
+    transition: color 0.15s;
+  }
+  /* 2. Menü-Reiter werden beim Hover dunkel */
+  .nav-link:hover { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .mobile-header { display: none; }
 
@@ -82,17 +111,25 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
   .cover-wrap { margin-bottom: 8px; }
   .cover { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
   .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .image-credit { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 300; color: #bbb; letter-spacing: 0.03em; text-align: right; margin-top: 5px; }
+  .image-credit {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 300;
+    color: #bbb;
+    letter-spacing: 0.03em;
+    text-align: right;
+    margin-top: 5px;
+  }
 
-  /* 1. Überschrift: fett, groß, klar als Titel lesbar */
+  /* 1. Überschrift: fett, größer, klar als Titel lesbar */
   .article-title {
     font-family: 'DM Mono', monospace !important;
-    font-size: 24px !important;
+    font-size: 26px !important;
     font-weight: 700 !important;
     color: #111 !important;
-    line-height: 1.2 !important;
-    margin-top: 20px !important;
-    margin-bottom: 4px !important;
+    line-height: 1.15 !important;
+    margin-top: 28px !important;
+    margin-bottom: 6px !important;
     letter-spacing: -0.01em !important;
   }
 
@@ -102,11 +139,18 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
     font-size: 10px;
     font-weight: 300;
     color: #bbb;
-    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
     line-height: 1.4;
   }
 
-  .body { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #444; line-height: 2; }
+  .body {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    color: #444;
+    line-height: 2;
+  }
 
   /* Untertitel / erster Absatz (Beschreibungstext) ausgegraut */
   .body p:first-child {
@@ -142,20 +186,28 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
     list-style: none !important;
   }
 
-  /* 2. Song-Links: kein Blau, keine Unterstreichung; hover wird dunkel */
+  /* 2. Song-Links: keine Standard-Link-Optik (nicht blau, nicht unterstrichen)
+        und werden beim Hover dunkel */
+  .body a {
+    color: inherit !important;
+    text-decoration: none !important;
+    transition: color 0.15s !important;
+  }
   .body ol li a, .body ul li a {
     color: #222 !important;
     text-decoration: none !important;
     transition: color 0.15s !important;
   }
-  .body ol li a:hover, .body ul li a:hover {
-    color: #555 !important;
+  .body a:hover,
+  .body ol li a:hover,
+  .body ul li a:hover {
+    color: #000 !important;
   }
 
-  /* 6. Back to top */
+  /* 6. Back to top — am Ende langer Artikel */
   .back-to-top {
     display: inline-block;
-    margin-top: 60px;
+    margin-top: 80px;
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     font-weight: 300;
@@ -164,15 +216,49 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', { day: '2-digit', mont
     letter-spacing: 0.04em;
     transition: color 0.15s;
   }
-  .back-to-top:hover { color: #333; }
+  .back-to-top:hover { color: #111; }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
-    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
+    .mobile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: #fff;
+      padding: 14px 20px 10px;
+      width: 100%;
+    }
+    .mobile-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #111;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
     .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
-    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
+    .mobile-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: #aaa;
+      letter-spacing: 0;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .mobile-nav a:hover { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .article-content { padding: 20px 20px 80px; }
+
+    /* Etwas kleinerer Titel auf Mobile, bleibt aber klar als Headline lesbar */
+    .article-title {
+      font-size: 22px !important;
+      margin-top: 22px !important;
+    }
+    .article-date {
+      margin-bottom: 22px;
+    }
   }
 </style>
