@@ -61,10 +61,10 @@ const { title } = Astro.props;
     }
 
     .body ul, .body ol {
-      list-style: none;
+      list-style: disc;
       display: block;
       margin: 24px 0;
-      padding: 0;
+      padding-left: 24px;
     }
     .body ul li, .body ol li {
       font-family: 'DM Mono', monospace;
@@ -74,7 +74,11 @@ const { title } = Astro.props;
       color: #444;
       text-align: left;
       line-height: 2;
-      list-style: none;
+      list-style: disc;
+      padding-left: 4px;
+    }
+    .body ul li::marker, .body ol li::marker {
+      color: #444;
     }
     .body ul li a, .body ol li a {
       color: #444;

@@ -124,7 +124,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   /* 1. Überschrift: fett, klar als Titel lesbar — kompakter, näher am Bild */
   .article-title {
     font-family: 'DM Mono', monospace !important;
-    font-size: 18px !important;
+    font-size: 15px !important;
     font-weight: 700 !important;
     color: #111 !important;
     line-height: 1.2 !important;
@@ -167,12 +167,12 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   .body audio, .body video { width: 100%; margin: 32px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
-  /* Songliste: normale Schrift wie Body-Text, hover wird grau */
+  /* Songliste: normale Schrift wie Body-Text, mit Bullets, leicht eingerückt */
   .body ol, .body ul {
-    list-style: none !important;
+    list-style: disc !important;
     display: block !important;
     margin: 24px 0 !important;
-    padding: 0 !important;
+    padding-left: 24px !important;
   }
   .body ol li, .body ul li {
     font-family: 'DM Mono', monospace !important;
@@ -182,7 +182,11 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     color: #444 !important;
     text-align: left !important;
     line-height: 2 !important;
-    list-style: none !important;
+    list-style: disc !important;
+    padding-left: 4px !important;
+  }
+  .body ol li::marker, .body ul li::marker {
+    color: #444 !important;
   }
 
   /* 2. Song-Links: keine Standard-Link-Optik (nicht blau, nicht unterstrichen)
@@ -251,9 +255,9 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .article-content { padding: 20px 20px 80px; }
 
-    /* Etwas kleinerer Titel auf Mobile, bleibt aber klar als Headline lesbar */
+    /* Etwas kleinerer Titel auf Mobile */
     .article-title {
-      font-size: 16px !important;
+      font-size: 14px !important;
       margin-top: 12px !important;
     }
     .article-date {
