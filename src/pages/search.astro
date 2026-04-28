@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 const articles = await getCollection('articles');
-const articlesData = articles.map((a) => ({ slug: a.slug, title: a.data.title, body: a.body }));
+const articlesData = articles.map((a) => ({ slug: a.slug, title: a.data.title }));
 ---
 <Base title="Search">
   <div class="sidebar">
@@ -32,16 +32,15 @@ const articlesData = articles.map((a) => ({ slug: a.slug, title: a.data.title, b
 <script define:vars={{ articlesData }}>
   const input = document.getElementById('searchInput');
   const results = document.getElementById('results');
-  const base = '/2026-04-24-at-11.56.37';
   input.addEventListener('input', () => {
     const q = input.value.toLowerCase().trim();
     results.innerHTML = '';
     if (!q) return;
-    const matches = articlesData.filter(a => a.title.toLowerCase().includes(q) || a.body.toLowerCase().includes(q));
+    const matches = articlesData.filter(a => a.title.toLowerCase().includes(q));
     if (!matches.length) { results.innerHTML = '<p class="no-results">no results</p>'; return; }
     matches.forEach(a => {
       const el = document.createElement('a');
-      el.href = `${base}/articles/${a.slug}`;
+      el.href = `/articles/${a.slug}`;
       el.className = 'result-item';
       el.setAttribute('data-astro-reload', '');
       el.textContent = a.title;
@@ -51,28 +50,23 @@ const articlesData = articles.map((a) => ({ slug: a.slug, title: a.data.title, b
 </script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  .sidebar { position: fixed; top: 0; left: 0; width: 140px; height: 100vh; padding: 28px 24px; z-index: 100; display: flex; align-items: center; }
+  .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
   .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #111; }
+  .nav-link:hover { color: #333; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .mobile-header { display: none; }
-  .page-content { }
-  .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
   .search-section { padding: 20px 40px 80px; max-width: 500px; margin: 0 auto; }
   #searchInput { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; border: none; border-bottom: 0.5px solid #ddd; outline: none; width: 100%; padding: 8px 0; background: transparent; }
   #searchInput::placeholder { color: #ccc; }
   .results { margin-top: 32px; display: flex; flex-direction: column; gap: 12px; }
   .result-item { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; text-decoration: none; display: block; }
-  .result-item:hover { font-style: italic; }
+  .result-item:hover { color: #333; font-style: italic; }
   .no-results { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
   @media (max-width: 600px) {
     .sidebar { display: none; }
-
-    .page-content { padding-top: 80px; }
     .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
-    .page-content { padding-top: 80px; }
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
     .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }

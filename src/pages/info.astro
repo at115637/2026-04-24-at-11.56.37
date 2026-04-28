@@ -22,10 +22,15 @@ import Base from '../layouts/Base.astro';
   <div class="page-content">
     <section class="info-section">
       <div class="info-block">
-        <p>2026-04-24 at 11.56.37 is a magazine founded by Ole Rohmert and Kian Matine. It collects fragments, fixations, and things that refuse to be categorized. It writes on what it finds.</p>
+        <p>2026-04-24 at 11.56.37 is a magazine, structured around a weekly release, founded by Ole Rohmert and Kian Matine at that exact date.
+It is dedicated to the development of a precise view.
+Each article is produced by a different contributor, allowing for a range of perspectives while maintaining a consistent editorial clarity.
+Every text is accompanied by a visual component around which the article circles.
+Working across written and visual formats, the publication explores these different forms.
+The magazine operates independently and in collaboration with a network of contributors.</p>
         <br/>
         <p>Based in Paris and Munich.</p>
-        <p>Contact: <a href="mailto:info@2026-04-24.com">info@2026-04-24.com</a></p>
+        <p>Contact: <a href="mailto:info@2026-magazine.com">info@2026-magazine.com</a></p>
       </div>
       <div class="info-block">
         <p class="impressum-title">IMPRESSUM</p>
@@ -34,33 +39,33 @@ import Base from '../layouts/Base.astro';
         <p class="small nolink">&#169;&#x200B;2026&#x200B; 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited.</p>
         <br/>
         <p class="small">Privacy: This website does not collect any personal data. No cookies are set. No data is shared with third parties.</p>
+        <br/>
+        <p class="small">If you are the owner of any content featured on this site and would like it removed, please contact us at <a href="mailto:info@2026-magazine.com">info@2026-magazine.com</a> and we will take it down promptly.</p>
       </div>
     </section>
   </div>
 </Base>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  .sidebar { position: fixed; top: 0; left: 0; width: 140px; height: 100vh; padding: 28px 24px; z-index: 100; display: flex; align-items: center; }
+  .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
   .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #111; }
+  .nav-link:hover { color: #333; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .mobile-header { display: none; }
-  .page-content { }
-  .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
-  .info-section { padding: 20px 40px 100px; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 60px; }
+  .page-content { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .info-section { padding: 80px 40px 80px; max-width: 500px; width: 100%; display: flex; flex-direction: column; gap: 60px; }
   .info-block p { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #333; line-height: 2; }
   .info-block a { color: #333; }
+  .info-block a:hover { color: #111; }
   .impressum-title { font-size: 9px !important; letter-spacing: 0.1em !important; color: #aaa !important; margin-bottom: 12px; }
   .small { font-size: 9px !important; color: #999 !important; line-height: 1.8 !important; }
   .nolink { -webkit-touch-callout: none; pointer-events: none; }
   @media (max-width: 600px) {
     .sidebar { display: none; }
-
-    .page-content { padding-top: 80px; }
+    .page-content { min-height: auto; align-items: flex-start; }
     .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
-    .page-content { padding-top: 80px; }
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
     .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }

@@ -15,7 +15,6 @@ const articles = (await getCollection('articles')).sort(
       <li><a data-astro-reload href="/info" class="nav-link">INFO</a></li>
     </ul>
   </div>
-
   <div class="mobile-header">
     <a data-astro-reload href="/" class="mobile-logo">2026-04-24 at 11.56.37</a>
     <nav class="mobile-nav">
@@ -25,7 +24,6 @@ const articles = (await getCollection('articles')).sort(
       <a data-astro-reload href="/info">INFO</a>
     </nav>
   </div>
-
   <div class="page-content">
     <section class="grid">
       {articles.map((article) => (
@@ -37,33 +35,23 @@ const articles = (await getCollection('articles')).sort(
     </section>
   </div>
 </Base>
-
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  .sidebar { position: fixed; top: 0; left: 0; width: 140px; height: 100vh; padding: 28px 24px; z-index: 100; display: flex; align-items: center; }
+  .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
   .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #111; }
+  .nav-link:hover { color: #333; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
-
   .mobile-header { display: none; }
-
-  .page-content { }
-  .mag-title { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: #111; letter-spacing: 0.01em; text-decoration: none; pointer-events: all; }
-
   .grid { padding: 20px 40px 80px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
   .article-thumb { display: block; width: 260px; text-decoration: none; }
   .article-thumb img { width: 260px; height: 260px; object-fit: cover; display: block; transition: opacity 0.2s; }
-  .article-thumb:hover img { opacity: 0.8; }
+  .article-thumb:hover img { opacity: 0.7; }
   .article-caption { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300; color: #aaa; margin-top: 10px; }
-
+  .article-thumb:hover .article-caption { color: #333; }
   @media (max-width: 600px) {
     .sidebar { display: none; }
-
-    .page-content { padding-top: 80px; }
-
     .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
     .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }

@@ -45,47 +45,33 @@ const latest = articles[0];
 
   .sidebar {
     position: fixed;
-    top: 0; left: 0;
-    width: 140px; height: 100vh;
-    padding: 28px 24px;
+    top: 22px; left: 0;
+    width: 140px;
+    padding: 0 24px;
     z-index: 100;
-    display: flex;
-    align-items: center;
   }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
   .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #111; }
+  .nav-link:hover { color: #333; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
 
   .mobile-header { display: none; }
 
-  .page-content { min-height: 100vh; }
-  .mag-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: #111;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    pointer-events: all;
-  }
-
-  .hero {
-    flex: 1;
+  .page-content {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px 60px;
   }
+
+  .hero { width: 100%; display: flex; justify-content: center; padding: 80px 40px 60px; }
   .hero-link { display: block; text-decoration: none; width: 100%; max-width: 700px; }
   .hero-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
   .hero-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
-  .hero-link:hover img { opacity: 0.85; }
+  .hero-link:hover img { opacity: 0.8; }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .page-content { margin-left: 0; padding-top: 80px; min-height: auto; flex-direction: column; }
-
     .mobile-header {
       display: flex;
       flex-direction: column;
@@ -100,9 +86,8 @@ const latest = articles[0];
     .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
     .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
-    .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
-
     .hero { padding: 20px 20px 60px; align-items: flex-start; }
+    .page-content { align-items: flex-start; min-height: auto; }
   }
 </style>

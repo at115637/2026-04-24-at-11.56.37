@@ -22,7 +22,6 @@ const { Content } = await article.render();
       <li><a data-astro-reload href="/info" class="nav-link">INFO</a></li>
     </ul>
   </div>
-
   <div class="mobile-header">
     <a data-astro-reload href="/" class="mobile-logo">2026-04-24 at 11.56.37</a>
     <nav class="mobile-nav">
@@ -32,7 +31,6 @@ const { Content } = await article.render();
       <a data-astro-reload href="/info">INFO</a>
     </nav>
   </div>
-
   <div class="page-content">
     <article class="article-content">
       <div class="cover-wrap">
@@ -52,29 +50,35 @@ const { Content } = await article.render();
 </Base>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .sidebar { position: fixed; top: 0; left: 0; width: 140px; height: 100vh; padding: 28px 24px; z-index: 100; display: flex; align-items: center; }
+  .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
   .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #111; }
+  .nav-link:hover { color: #333; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
-
   .mobile-header { display: none; }
 
   .article-content { max-width: 560px; margin: 0 auto; padding: 20px 40px 100px; }
 
-  .cover-wrap { margin-bottom: 10px; }
+  .cover-wrap { margin-bottom: 8px; }
   .cover { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
   .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .image-credit { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 300; color: #bbb; letter-spacing: 0.03em; text-align: right; margin-top: 6px; }
+  .image-credit { font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 300; color: #bbb; letter-spacing: 0.03em; text-align: right; margin-top: 5px; }
 
-  .article-title { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 400; color: #111; line-height: 1.7; margin-top: 28px; margin-bottom: 32px; }
+  .article-title { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 400; color: #111; line-height: 1.5; margin-top: 16px; margin-bottom: 4px; }
 
   .body { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #444; line-height: 2; }
-  .body h1, .body h2, .body h3 { font-size: 12px; font-weight: 400; color: #111; line-height: 1.7; margin-bottom: 24px; }
+  .body > :global(p:first-child) {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 4px;
+    line-height: 1.6;
+  }
   .body p { margin-bottom: 20px; }
   .body img { display: none; }
   .body audio, .body video { width: 100%; margin: 32px 0; display: block; }
@@ -85,20 +89,25 @@ const { Content } = await article.render();
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    margin: 32px 0;
+    gap: 8px;
+    margin: 40px 0;
     padding: 0;
   }
   .body ol li, .body ul li {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    font-weight: 300;
+    font-family: 'IM Fell English', serif;
+    font-size: 16px;
     font-style: italic;
-    color: #333;
+    color: #222;
     text-align: center;
-    letter-spacing: 0.01em;
-    line-height: 1.6;
+    line-height: 1.5;
     list-style: none;
+  }
+  .body ol li a, .body ul li a {
+    color: #222;
+    text-decoration: none;
+  }
+  .body ol li a:hover, .body ul li a:hover {
+    color: #666;
   }
 
   @media (max-width: 600px) {
