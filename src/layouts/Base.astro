@@ -31,14 +31,20 @@ const { title } = Astro.props;
       color: #111;
       letter-spacing: 0.01em;
       text-decoration: none;
+      background: transparent;
+    }
+    .page-content {
+      margin-left: 140px;
+      padding-top: 60px;
     }
     @media (max-width: 600px) {
       #site-title { display: none; }
+      .page-content { margin-left: 0; padding-top: 80px; }
     }
   </style>
 </head>
 <body>
-  <a id="site-title" href="/2026-04-24-at-11.56.37/">2026-04-24 at 11.56.37</a>
+  <a id="site-title" href="/">2026-04-24 at 11.56.37</a>
   <slot />
 </body>
 </html>

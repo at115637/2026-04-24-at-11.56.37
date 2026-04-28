@@ -9,27 +9,27 @@ const articles = (await getCollection('articles')).sort(
 <Base title="Articles">
   <div class="sidebar">
     <ul>
-      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/search" class="nav-link">SEARCH</a></li>
-      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="nav-link active">ARTICLES</a></li>
-      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="nav-link disabled">PUBLICATIONS</a></li>
-      <li><a data-astro-reload href="/2026-04-24-at-11.56.37/info" class="nav-link">INFO</a></li>
+      <li><a data-astro-reload href="/search" class="nav-link">SEARCH</a></li>
+      <li><a data-astro-reload href="/articles" class="nav-link active">ARTICLES</a></li>
+      <li><a data-astro-reload href="/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+      <li><a data-astro-reload href="/info" class="nav-link">INFO</a></li>
     </ul>
   </div>
 
   <div class="mobile-header">
-    <a data-astro-reload href="/2026-04-24-at-11.56.37/" class="mobile-logo">2026-04-24 at 11.56.37</a>
+    <a data-astro-reload href="/" class="mobile-logo">2026-04-24 at 11.56.37</a>
     <nav class="mobile-nav">
-      <a data-astro-reload href="/2026-04-24-at-11.56.37/search">SEARCH</a>
-      <a data-astro-reload href="/2026-04-24-at-11.56.37/articles" class="active">ARTICLES</a>
-      <a data-astro-reload href="/2026-04-24-at-11.56.37/publications" class="disabled">PUBL.</a>
-      <a data-astro-reload href="/2026-04-24-at-11.56.37/info">INFO</a>
+      <a data-astro-reload href="/search">SEARCH</a>
+      <a data-astro-reload href="/articles" class="active">ARTICLES</a>
+      <a data-astro-reload href="/publications" class="disabled">PUBL.</a>
+      <a data-astro-reload href="/info">INFO</a>
     </nav>
   </div>
 
   <div class="page-content">
     <section class="grid">
       {articles.map((article) => (
-        <a data-astro-reload href={`/2026-04-24-at-11.56.37/articles/${article.slug}`} class="article-thumb">
+        <a data-astro-reload href={`/articles/${article.slug}`} class="article-thumb">
           <img src={article.data.coverImage} alt={article.data.title} loading="lazy" />
           <p class="article-caption">{article.data.title}</p>
         </a>

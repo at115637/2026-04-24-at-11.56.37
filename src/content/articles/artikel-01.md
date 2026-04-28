@@ -1,7 +1,7 @@
 ---
 title: "Songs for a hotel room"
 date: "2026-04-24"
-coverImage: "/2026-04-24-at-11.56.37/media/Artikel1.jpeg"
+coverImage: "/media/Artikel1.jpeg"
 imageCredit: "Image: Ole Rohmert"
 ---
 
