@@ -66,10 +66,34 @@ const articlesData = articles.map((a) => ({ slug: a.slug, title: a.data.title })
   .no-results { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .mobile-header { display: flex; flex-direction: column; align-items: center; position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #fff; padding: 14px 20px 10px; width: 100%; }
-    .mobile-logo { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: #111; text-decoration: none; margin-bottom: 10px; }
-    .mobile-nav { display: flex; justify-content: center; gap: 16px; width: 100%; }
-    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; }
+    .mobile-header {
+      display: block;
+      width: 100%;
+      padding: 14px 20px 0;
+    }
+    .mobile-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #111;
+      text-decoration: none;
+      position: fixed;
+      top: 14px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 100;
+      background: transparent;
+      pointer-events: auto;
+    }
+    .mobile-nav {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 38px 4px 0;
+    }
+    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; transition: color 0.15s; }
+    .mobile-nav a:hover { color: #111; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .search-section { padding: 20px 20px 60px; }
