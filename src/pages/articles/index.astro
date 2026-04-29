@@ -87,24 +87,26 @@ const articles = (await getCollection('articles')).sort(
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
 
     /* 5. Mobile Artikelübersicht:
-          - 2-Spalten-Grid horizontal mittig
+          - alle Artikel vertikal untereinander, horizontal auf der Mittelachse
           - oberstes Bild ein Stück runter (gleicher Top-Abstand wie auf anderen Seiten) */
     .grid {
       padding: 40px 16px 60px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px 14px;
-      justify-content: center;
-      align-items: start;
-      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      max-width: none;
       margin: 0 auto;
     }
-    .article-thumb { width: 100%; }
+    .article-thumb {
+      width: 60vw;
+      max-width: 240px;
+    }
     .article-thumb img {
       width: 100%;
       height: auto;
       aspect-ratio: 1 / 1;
     }
-    .article-caption { font-size: 9px; margin-top: 6px; line-height: 1.4; }
+    .article-caption { font-size: 9px; margin-top: 6px; line-height: 1.4; text-align: center; }
   }
 </style>
