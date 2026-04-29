@@ -32,6 +32,12 @@ The magazine operates independently and in collaboration with a network of contr
         <p>Based in Paris and Munich.</p>
         <p>Contact: <a href="mailto:info@2026-magazine.com">info@2026-magazine.com</a></p>
       </div>
+      <div class="info-block subscribe-block">
+        <p class="subscribe-label">Subscribe to be notified when a new article is published.</p>
+        <div class="subscribe-wrap">
+          <script async src="https://eocampaign1.com/form/5b51eefc-43cc-11f1-ad77-67a4c0614056.js" data-form="5b51eefc-43cc-11f1-ad77-67a4c0614056"></script>
+        </div>
+      </div>
       <div class="info-block">
         <p class="impressum-title">IMPRESSUM</p>
         <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
@@ -45,6 +51,37 @@ The magazine operates independently and in collaboration with a network of contr
     </section>
   </div>
 </Base>
+
+<script is:inline>
+  // EmailOctopus "Powered by" Branding nachträglich ausblenden,
+  // sobald das Script seinen Inhalt asynchron einfügt
+  (function () {
+    const wrap = document.querySelector('.subscribe-wrap');
+    if (!wrap) return;
+    const hideBranding = () => {
+      wrap.querySelectorAll('a[href*="emailoctopus" i]').forEach((a) => {
+        a.style.setProperty('display', 'none', 'important');
+        if (a.parentElement) {
+          a.parentElement.style.setProperty('display', 'none', 'important');
+        }
+      });
+      wrap.querySelectorAll('*').forEach((el) => {
+        if (el.children.length === 0 && /powered\s*by/i.test(el.textContent || '')) {
+          el.style.setProperty('display', 'none', 'important');
+          if (el.parentElement) {
+            el.parentElement.style.setProperty('display', 'none', 'important');
+          }
+        }
+      });
+    };
+    const observer = new MutationObserver(hideBranding);
+    observer.observe(wrap, { childList: true, subtree: true });
+    hideBranding();
+    setTimeout(hideBranding, 500);
+    setTimeout(hideBranding, 1500);
+    setTimeout(hideBranding, 3000);
+  })();
+</script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
@@ -62,6 +99,127 @@ The magazine operates independently and in collaboration with a network of contr
   .impressum-title { font-size: 9px !important; letter-spacing: 0.1em !important; color: #aaa !important; margin-bottom: 12px; }
   .small { font-size: 9px !important; color: #999 !important; line-height: 1.8 !important; }
   .nolink { -webkit-touch-callout: none; pointer-events: none; }
+
+  /* Subscribe-Block — mittig zentriert unter dem Info-Text */
+  .subscribe-block {
+    align-items: center;
+    text-align: center;
+  }
+  .subscribe-label {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 10px !important;
+    font-weight: 300 !important;
+    color: #aaa !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
+    text-align: center !important;
+  }
+  .subscribe-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* EmailOctopus Form-Overrides — kompakt, eine Zeile, transparent */
+  .subscribe-wrap :global(form),
+  .subscribe-wrap :global([class*="eocampaign"]) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: 'DM Mono', monospace !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+  .subscribe-wrap :global(form > *),
+  .subscribe-wrap :global([class*="eocampaign"] > *) {
+    margin: 0 !important;
+  }
+
+  /* Input-Feld */
+  .subscribe-wrap :global(input[type="email"]) {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 10px !important;
+    font-weight: 300 !important;
+    color: #111 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 0.5px solid #ddd !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 4px 0 !important;
+    width: 200px !important;
+    height: auto !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  .subscribe-wrap :global(input[type="email"]::placeholder) {
+    color: #ccc !important;
+    font-family: 'DM Mono', monospace !important;
+    text-align: center !important;
+  }
+
+  /* Submit-Button */
+  .subscribe-wrap :global(button[type="submit"]),
+  .subscribe-wrap :global(input[type="submit"]) {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 10px !important;
+    font-weight: 300 !important;
+    color: #aaa !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    letter-spacing: 0.06em !important;
+    transition: color 0.15s !important;
+    width: auto !important;
+    height: auto !important;
+    white-space: nowrap !important;
+  }
+  .subscribe-wrap :global(button[type="submit"]:hover),
+  .subscribe-wrap :global(input[type="submit"]:hover) {
+    color: #111 !important;
+    background: transparent !important;
+  }
+
+  /* Texte (Erfolgsmeldung etc.) */
+  .subscribe-wrap :global(label),
+  .subscribe-wrap :global(p),
+  .subscribe-wrap :global(span) {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 10px !important;
+    font-weight: 300 !important;
+    color: #aaa !important;
+    background: transparent !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Powered-by-EmailOctopus-Branding ausblenden */
+  .subscribe-wrap :global(.octopus-branding),
+  .subscribe-wrap :global(.eo-branding),
+  .subscribe-wrap :global(.branding),
+  .subscribe-wrap :global([class*="powered"]),
+  .subscribe-wrap :global([class*="branding"]),
+  .subscribe-wrap :global([class*="Powered"]),
+  .subscribe-wrap :global([class*="Branding"]),
+  .subscribe-wrap :global(a[href*="emailoctopus"]),
+  .subscribe-wrap :global(a[href*="EmailOctopus"]) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+  }
   @media (max-width: 600px) {
     .sidebar { display: none; }
     .page-content { min-height: auto; align-items: flex-start; }
@@ -96,5 +254,10 @@ The magazine operates independently and in collaboration with a network of contr
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .info-section { padding: 20px 20px 80px; }
+
+    /* Mobile: Subscribe-Input etwas schmaler */
+    .subscribe-wrap :global(input[type="email"]) {
+      width: 160px !important;
+    }
   }
 </style>
