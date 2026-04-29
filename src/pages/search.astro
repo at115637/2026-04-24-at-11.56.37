@@ -40,26 +40,22 @@ const articlesData = articles.map((a) => ({
     const q = input.value.toLowerCase().trim();
     results.innerHTML = '';
     if (!q) return;
-    const matches = articlesData.filter(a =>
-      a.title.toLowerCase().includes(q) ||
-      (a.author && a.author.toLowerCase().includes(q))
-    );
-    if (!matches.length) { results.innerHTML = '<p class="no-results">no results</p>'; return; }
+    // Suche separat in Titel ODER Autor — aber zeige immer nur den Titel
+    const matches = articlesData.filter(a => {
+      const titleMatch = a.title.toLowerCase().includes(q);
+      const authorMatch = a.author && a.author.toLowerCase().includes(q);
+      return titleMatch || authorMatch;
+    });
+    if (!matches.length) {
+      results.innerHTML = '<p class="no-results">no results</p>';
+      return;
+    }
     matches.forEach(a => {
       const el = document.createElement('a');
       el.href = `/articles/${a.slug}`;
       el.className = 'result-item';
       el.setAttribute('data-astro-reload', '');
-      const titleSpan = document.createElement('span');
-      titleSpan.className = 'result-title';
-      titleSpan.textContent = a.title;
-      el.appendChild(titleSpan);
-      if (a.author) {
-        const authorSpan = document.createElement('span');
-        authorSpan.className = 'result-author';
-        authorSpan.textContent = a.author;
-        el.appendChild(authorSpan);
-      }
+      el.textContent = a.title;
       results.appendChild(el);
     });
   });
@@ -78,30 +74,23 @@ const articlesData = articles.map((a) => ({
   #searchInput::placeholder { color: #ccc; }
   .results { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
 
-  /* Suchergebnis: kein Link-Look — nicht blau, nicht unterstrichen, hover wird grau */
-  .result-item {
-    font-family: 'DM Mono', monospace;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    color: inherit;
+  /* Suchergebnis: kein Link-Look — nicht blau, nicht unterstrichen */
+  a.result-item,
+  a.result-item:link,
+  a.result-item:visited,
+  a.result-item:active {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 11px !important;
+    font-weight: 300 !important;
+    color: #111 !important;
+    text-decoration: none !important;
+    display: block;
     transition: color 0.15s;
   }
-  .result-title {
-    font-size: 11px;
-    font-weight: 300;
-    color: #111;
-    transition: color 0.15s;
+  a.result-item:hover {
+    color: #aaa !important;
+    text-decoration: none !important;
   }
-  .result-author {
-    font-size: 10px;
-    font-weight: 300;
-    color: #bbb;
-    letter-spacing: 0.04em;
-  }
-  .result-item:hover .result-title { color: #aaa; }
-  .result-item:hover .result-author { color: #ccc; }
 
   .no-results { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
   @media (max-width: 600px) {
