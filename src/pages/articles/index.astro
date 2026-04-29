@@ -33,8 +33,46 @@ const articles = (await getCollection('articles')).sort(
         </a>
       ))}
     </section>
+    <div class="subscribe-wrap">
+      <script async src="https://eocampaign1.com/form/5b51eefc-43cc-11f1-ad77-67a4c0614056.js" data-form="5b51eefc-43cc-11f1-ad77-67a4c0614056"></script>
+    </div>
   </div>
 </Base>
+
+<script is:inline>
+  // EmailOctopus "Powered by" Branding nachträglich ausblenden,
+  // sobald das Script seinen Inhalt asynchron einfügt
+  (function () {
+    const wrap = document.querySelector('.subscribe-wrap');
+    if (!wrap) return;
+    const hideBranding = () => {
+      // Alle <a>-Tags die zu emailoctopus.com gehen + Eltern-Container ausblenden
+      wrap.querySelectorAll('a[href*="emailoctopus" i]').forEach((a) => {
+        a.style.setProperty('display', 'none', 'important');
+        if (a.parentElement) {
+          a.parentElement.style.setProperty('display', 'none', 'important');
+        }
+      });
+      // Alle Elemente die "Powered" als Text enthalten
+      wrap.querySelectorAll('*').forEach((el) => {
+        if (el.children.length === 0 && /powered\s*by/i.test(el.textContent || '')) {
+          el.style.setProperty('display', 'none', 'important');
+          if (el.parentElement) {
+            el.parentElement.style.setProperty('display', 'none', 'important');
+          }
+        }
+      });
+    };
+    // Beobachte den Container — wenn EO sein Form einsetzt, sofort verstecken
+    const observer = new MutationObserver(hideBranding);
+    observer.observe(wrap, { childList: true, subtree: true });
+    // Initial + nach kurzem Delay
+    hideBranding();
+    setTimeout(hideBranding, 500);
+    setTimeout(hideBranding, 1500);
+    setTimeout(hideBranding, 3000);
+  })();
+</script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
@@ -52,6 +90,103 @@ const articles = (await getCollection('articles')).sort(
   .article-thumb:hover img { opacity: 0.7; }
   .article-caption { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300; color: #aaa; margin-top: 10px; transition: color 0.15s; }
   .article-thumb:hover .article-caption { color: #111; }
+
+  /* Subscribe-Box: rechts unten sticky am Bildschirmrand, transparent */
+  .subscribe-wrap {
+    position: fixed;
+    bottom: 22px;
+    right: 24px;
+    z-index: 100;
+    width: 240px;
+    background: transparent;
+    pointer-events: auto;
+  }
+
+  /* EmailOctopus Form-Overrides — kompakt, transparent, klein */
+  .subscribe-wrap :global(form),
+  .subscribe-wrap :global([class*="eocampaign"]) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: 'DM Mono', monospace !important;
+  }
+
+  /* Input-Feld */
+  .subscribe-wrap :global(input[type="email"]) {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 9px !important;
+    font-weight: 300 !important;
+    color: #111 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 0.5px solid #ddd !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 4px 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .subscribe-wrap :global(input[type="email"]::placeholder) {
+    color: #ccc !important;
+    font-family: 'DM Mono', monospace !important;
+  }
+
+  /* Submit-Button */
+  .subscribe-wrap :global(button[type="submit"]),
+  .subscribe-wrap :global(input[type="submit"]) {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 9px !important;
+    font-weight: 300 !important;
+    color: #aaa !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 4px 0 !important;
+    margin-top: 4px !important;
+    cursor: pointer !important;
+    letter-spacing: 0.06em !important;
+    transition: color 0.15s !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .subscribe-wrap :global(button[type="submit"]:hover),
+  .subscribe-wrap :global(input[type="submit"]:hover) {
+    color: #111 !important;
+    background: transparent !important;
+  }
+
+  /* Alle Labels, Texte (Erfolgsmeldung etc.) */
+  .subscribe-wrap :global(label),
+  .subscribe-wrap :global(p),
+  .subscribe-wrap :global(span),
+  .subscribe-wrap :global(div) {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 9px !important;
+    font-weight: 300 !important;
+    color: #aaa !important;
+    background: transparent !important;
+  }
+
+  /* Powered-by-EmailOctopus-Branding ausblenden */
+  .subscribe-wrap :global(.octopus-branding),
+  .subscribe-wrap :global(.eo-branding),
+  .subscribe-wrap :global(.branding),
+  .subscribe-wrap :global([class*="powered"]),
+  .subscribe-wrap :global([class*="branding"]),
+  .subscribe-wrap :global([class*="Powered"]),
+  .subscribe-wrap :global([class*="Branding"]),
+  .subscribe-wrap :global(a[href*="emailoctopus"]),
+  .subscribe-wrap :global(a[href*="EmailOctopus"]) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+  }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
@@ -108,5 +243,15 @@ const articles = (await getCollection('articles')).sort(
       aspect-ratio: 1 / 1;
     }
     .article-caption { font-size: 9px; margin-top: 6px; line-height: 1.4; text-align: center; }
+
+    /* Mobile: Subscribe-Box bleibt unten am Rand, mittig statt rechts, etwas kleiner */
+    .subscribe-wrap {
+      bottom: 16px;
+      right: 16px;
+      left: 16px;
+      width: auto;
+      max-width: 200px;
+      margin: 0 auto;
+    }
   }
 </style>
