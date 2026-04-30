@@ -51,20 +51,20 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
         )}
       </div>
 
-      {/* 1. Überschrift fett, groß, klar als Titel lesbar */}
+      {/* 1. Überschrift fett, klar als Titel lesbar */}
       <h1 class="article-title">{article.data.title}</h1>
 
       {/* 4. Datum direkt unter dem Titel, ausgegraut */}
       <p class="article-date">{formattedDate}</p>
 
+      {/* 7. Autor unter dem Datum, "written by" Prefix */}
+      {article.data.author && (
+        <p class="article-author">written by {article.data.author}</p>
+      )}
+
       <div class="body">
         <Content />
       </div>
-
-      {/* Autor — dezent am Ende des Artikels */}
-      {article.data.author && (
-        <p class="article-author">{article.data.author}</p>
-      )}
 
       {/* 6. Back to top — am Ende langer Artikel */}
       <a href="#top" class="back-to-top" id="back-to-top-link" aria-label="Back to top">↑</a>
@@ -126,120 +126,124 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     margin-top: 5px;
   }
 
-  /* 1. Überschrift: fett, klar als Titel lesbar — kompakter, näher am Bild */
+  /* 1. Überschrift: fett, kleiner */
   .article-title {
     font-family: 'DM Mono', monospace !important;
-    font-size: 13px !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
-    color: #111 !important;
+    color: #999 !important;
     line-height: 1.2 !important;
     margin-top: 14px !important;
     margin-bottom: 4px !important;
     letter-spacing: -0.005em !important;
   }
 
-  /* 4. Datum direkt unter dem Titel, ausgegraut */
+  /* 4. Datum direkt unter dem Titel — kleiner, hellgrau */
   .article-date {
     font-family: 'DM Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 300;
-    color: #bbb;
+    color: #aaa;
     letter-spacing: 0.04em;
-    margin-bottom: 24px;
+    margin-bottom: 2px;
     line-height: 1.4;
   }
 
+  /* 7. Autor unter dem Datum, "written by" — kleiner, hellgrau */
+  .article-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 300;
+    color: #aaa;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+
+  /* Body — alles im einheitlichen hellgrau */
   .body {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     font-weight: 300;
-    color: #444;
-    line-height: 2;
+    color: #999;
+    line-height: 1.8;
   }
 
-  /* Untertitel / erster Absatz (Beschreibungstext) ausgegraut */
+  /* Erster Absatz — weniger Abstand zum Datum/Autor drüber */
   .body p:first-child {
     font-family: 'DM Mono', monospace !important;
     font-size: 11px !important;
     font-weight: 300 !important;
     color: #999 !important;
-    margin-bottom: 24px !important;
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
     line-height: 1.6 !important;
   }
 
-  .body p { margin-bottom: 20px; }
+  /* Folgende Absätze — kleinere Abstände, gleiches Hellgrau */
+  .body p {
+    margin-bottom: 12px;
+    color: #999;
+  }
   .body img { display: none; }
-  .body audio, .body video { width: 100%; margin: 32px 0; display: block; }
+  .body audio, .body video { width: 100%; margin: 20px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
-  /* Songliste: normale Schrift wie Body-Text, mit Bullets, leicht eingerückt */
+  /* 6. Liste: mittig zentriert, ohne Bullet-Points */
   .body ol, .body ul {
-    list-style: disc !important;
+    list-style: none !important;
     display: block !important;
-    margin: 24px 0 !important;
-    padding-left: 24px !important;
+    margin: 14px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
   }
   .body ol li, .body ul li {
     font-family: 'DM Mono', monospace !important;
     font-size: 11px !important;
     font-weight: 300 !important;
     font-style: normal !important;
-    color: #444 !important;
-    text-align: left !important;
-    line-height: 2 !important;
-    list-style: disc !important;
-    padding-left: 4px !important;
+    color: #999 !important;
+    text-align: center !important;
+    line-height: 1.8 !important;
+    list-style: none !important;
+    padding-left: 0 !important;
   }
   .body ol li::marker, .body ul li::marker {
-    color: #444 !important;
+    content: '' !important;
+    display: none !important;
   }
 
-  /* 2. Song-Links: keine Standard-Link-Optik (nicht blau, nicht unterstrichen)
-        und werden beim Hover grau */
+  /* Song-Links: kein Link-Look, hover heller */
   .body a {
     color: inherit !important;
     text-decoration: none !important;
     transition: color 0.15s !important;
   }
   .body ol li a, .body ul li a {
-    color: #444 !important;
+    color: #999 !important;
     text-decoration: none !important;
     transition: color 0.15s !important;
   }
   .body a:hover,
   .body ol li a:hover,
   .body ul li a:hover {
-    color: #aaa !important;
+    color: #ccc !important;
   }
 
-  /* 6. Back to top — am Ende langer Artikel */
+  /* 8. Back to top — größerer Pfeil */
   .back-to-top {
     display: inline-block;
-    margin-top: 80px;
+    margin-top: 60px;
     font-family: 'DM Mono', monospace;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 300;
     color: #bbb;
     text-decoration: none;
     letter-spacing: 0.04em;
     transition: color 0.15s;
+    line-height: 1;
   }
   .back-to-top:hover { color: #111; }
-
-  /* Autor — dezent grau am Ende des Artikels */
-  .article-author {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    font-weight: 300;
-    color: #bbb;
-    letter-spacing: 0.04em;
-    margin-top: 56px;
-    line-height: 1.4;
-  }
-  /* Wenn der Autor da ist, fängt back-to-top weniger weit unten an */
-  .article-author + .back-to-top {
-    margin-top: 24px;
-  }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }
@@ -283,11 +287,17 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     .article-content { padding: 40px 20px 80px; }
 
     .article-title {
-      font-size: 12px !important;
+      font-size: 11px !important;
       margin-top: 12px !important;
     }
     .article-date {
-      margin-bottom: 20px;
+      margin-bottom: 2px;
+    }
+    .article-author {
+      margin-bottom: 16px;
+    }
+    .back-to-top {
+      font-size: 18px;
     }
   }
 </style>
