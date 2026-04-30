@@ -1,14 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Info">
+<Base title="Newsletter">
   <div class="sidebar">
     <ul>
       <li><a data-astro-reload href="/search" class="nav-link">SEARCH</a></li>
       <li><a data-astro-reload href="/articles" class="nav-link">ARTICLES</a></li>
-      <li><a data-astro-reload href="/newsletter" class="nav-link">NEWSLETTER</a></li>
+      <li><a data-astro-reload href="/newsletter" class="nav-link active">NEWSLETTER</a></li>
       <li><a data-astro-reload href="/publications" class="nav-link disabled">PUBLICATIONS</a></li>
-      <li><a data-astro-reload href="/info" class="nav-link active">INFO</a></li>
+      <li><a data-astro-reload href="/info" class="nav-link">INFO</a></li>
     </ul>
   </div>
   <div class="mobile-header">
@@ -16,76 +16,92 @@ import Base from '../layouts/Base.astro';
     <nav class="mobile-nav">
       <a data-astro-reload href="/search">SEARCH</a>
       <a data-astro-reload href="/articles">ARTICLES</a>
-      <a data-astro-reload href="/newsletter">NEWS.</a>
+      <a data-astro-reload href="/newsletter" class="active">NEWS.</a>
       <a data-astro-reload href="/publications" class="disabled">PUBL.</a>
-      <a data-astro-reload href="/info" class="active">INFO</a>
+      <a data-astro-reload href="/info">INFO</a>
     </nav>
   </div>
+
   <div class="page-content">
-    <section class="info-section">
-      <div class="info-block">
-        <p>2026-04-24 at 11.56.37 is a magazine, structured around a weekly release, founded by Ole Rohmert and Kian Matine at that exact date.
-It is dedicated to the development of a precise view.
-Each article is produced by a different contributor, allowing for a range of perspectives while maintaining a consistent editorial clarity.
-Every text is accompanied by a visual component around which the article circles.
-Working across written and visual formats, the publication explores these different forms.
-The magazine operates independently and in collaboration with a network of contributors.</p>
-        <br/>
-        <p>Based in Paris and Munich.</p>
-        <p>Contact: <a href="mailto:info@2026-magazine.com">info@2026-magazine.com</a></p>
-      </div>
-      <div class="info-block">
-        <p class="impressum-title">IMPRESSUM</p>
-        <p>Ole Rohmert & Kian Matine<br/>Paris, France / Munich, Germany</p>
-        <br/>
-        <p class="small nolink">&#169;&#x200B;2026&#x200B; 2026-04-24 at 11.56.37. All rights reserved. Reproduction of any content without prior written permission is prohibited.</p>
-        <br/>
-        <p class="small">Privacy: This website does not collect any personal data. No cookies are set. No data is shared with third parties.</p>
-        <br/>
-        <p class="small">If you are the owner of any content featured on this site and would like it removed, please contact us at <a href="mailto:info@2026-magazine.com">info@2026-magazine.com</a> and we will take it down promptly.</p>
+    <section class="newsletter-section">
+      <p class="newsletter-intro">Subscribe to be notified when a new article is published.</p>
+      <div class="subscribe-wrap">
+        <script async src="https://eocampaign1.com/form/5b51eefc-43cc-11f1-ad77-67a4c0614056.js" data-form="5b51eefc-43cc-11f1-ad77-67a4c0614056"></script>
       </div>
     </section>
   </div>
 </Base>
+
+<script is:inline>
+  // EmailOctopus "Powered by" Branding nachträglich ausblenden
+  (function () {
+    const wrap = document.querySelector('.subscribe-wrap');
+    if (!wrap) return;
+    const hideBranding = () => {
+      wrap.querySelectorAll('a[href*="emailoctopus" i]').forEach((a) => {
+        a.style.setProperty('display', 'none', 'important');
+        if (a.parentElement) {
+          a.parentElement.style.setProperty('display', 'none', 'important');
+        }
+      });
+      wrap.querySelectorAll('*').forEach((el) => {
+        if (el.children.length === 0 && /powered\s*by/i.test(el.textContent || '')) {
+          el.style.setProperty('display', 'none', 'important');
+          if (el.parentElement) {
+            el.parentElement.style.setProperty('display', 'none', 'important');
+          }
+        }
+      });
+    };
+    const observer = new MutationObserver(hideBranding);
+    observer.observe(wrap, { childList: true, subtree: true });
+    hideBranding();
+    setTimeout(hideBranding, 500);
+    setTimeout(hideBranding, 1500);
+    setTimeout(hideBranding, 3000);
+  })();
+</script>
+
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* Sidebar / Navigation */
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #333; }
+  .nav-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: #aaa;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    display: block;
+    transition: color 0.15s;
+  }
+  .nav-link:hover { color: #111; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .mobile-header { display: none; }
-  .page-content { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-  .info-section { padding: 80px 40px 80px; max-width: 500px; width: 100%; display: flex; flex-direction: column; gap: 60px; }
-  .info-block p { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #333; line-height: 2; }
-  .info-block a { color: #333; }
-  .info-block a:hover { color: #111; }
-  .impressum-title { font-size: 9px !important; letter-spacing: 0.1em !important; color: #aaa !important; margin-bottom: 12px; }
-  .small { font-size: 9px !important; color: #999 !important; line-height: 1.8 !important; }
-  .nolink { -webkit-touch-callout: none; pointer-events: none; }
 
-  /* Subscribe-Block — mittig zentriert unter dem Info-Text */
-  .subscribe-block {
-    align-items: center;
-    text-align: center;
+  /* Newsletter-Inhalt */
+  .page-content { min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; }
+  .newsletter-section {
+    max-width: 560px;
+    width: 100%;
+    padding: 40px;
   }
-  .subscribe-label {
-    font-family: 'DM Mono', monospace !important;
-    font-size: 10px !important;
-    font-weight: 300 !important;
-    color: #aaa !important;
-    line-height: 1.6 !important;
-    margin-bottom: 4px !important;
-    text-align: center !important;
+  .newsletter-intro {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 300;
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 24px;
   }
+
+  /* EmailOctopus Form-Overrides — eine Zeile, dezent */
   .subscribe-wrap {
-    display: flex;
-    justify-content: center;
     width: 100%;
   }
-
-  /* EmailOctopus Form-Overrides — kompakt, eine Zeile, transparent */
   .subscribe-wrap :global(form),
   .subscribe-wrap :global([class*="eocampaign"]) {
     background: transparent !important;
@@ -95,21 +111,14 @@ The magazine operates independently and in collaboration with a network of contr
     margin: 0 !important;
     font-family: 'DM Mono', monospace !important;
     display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 12px !important;
-    flex-wrap: nowrap !important;
-  }
-  .subscribe-wrap :global(form > *),
-  .subscribe-wrap :global([class*="eocampaign"] > *) {
-    margin: 0 !important;
+    flex-direction: column !important;
+    gap: 18px !important;
   }
 
-  /* Input-Feld */
+  /* Input-Feld — voll breit, mit Unterstrich */
   .subscribe-wrap :global(input[type="email"]) {
     font-family: 'DM Mono', monospace !important;
-    font-size: 10px !important;
+    font-size: 11px !important;
     font-weight: 300 !important;
     color: #111 !important;
     background: transparent !important;
@@ -118,19 +127,17 @@ The magazine operates independently and in collaboration with a network of contr
     border-radius: 0 !important;
     box-shadow: none !important;
     outline: none !important;
-    padding: 4px 0 !important;
-    width: 200px !important;
+    padding: 8px 0 !important;
+    width: 100% !important;
     height: auto !important;
     margin: 0 !important;
-    text-align: center !important;
   }
   .subscribe-wrap :global(input[type="email"]::placeholder) {
     color: #ccc !important;
     font-family: 'DM Mono', monospace !important;
-    text-align: center !important;
   }
 
-  /* Submit-Button */
+  /* Submit-Button — wie ein Menü-Reiter */
   .subscribe-wrap :global(button[type="submit"]),
   .subscribe-wrap :global(input[type="submit"]) {
     font-family: 'DM Mono', monospace !important;
@@ -141,14 +148,15 @@ The magazine operates independently and in collaboration with a network of contr
     border: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    padding: 4px 0 !important;
+    padding: 0 !important;
     margin: 0 !important;
     cursor: pointer !important;
     letter-spacing: 0.06em !important;
     transition: color 0.15s !important;
     width: auto !important;
     height: auto !important;
-    white-space: nowrap !important;
+    align-self: flex-start !important;
+    text-align: left !important;
   }
   .subscribe-wrap :global(button[type="submit"]:hover),
   .subscribe-wrap :global(input[type="submit"]:hover) {
@@ -156,7 +164,7 @@ The magazine operates independently and in collaboration with a network of contr
     background: transparent !important;
   }
 
-  /* Texte (Erfolgsmeldung etc.) */
+  /* Erfolgsmeldung etc. */
   .subscribe-wrap :global(label),
   .subscribe-wrap :global(p),
   .subscribe-wrap :global(span) {
@@ -166,7 +174,6 @@ The magazine operates independently and in collaboration with a network of contr
     color: #aaa !important;
     background: transparent !important;
     margin: 0 !important;
-    text-align: center !important;
   }
 
   /* Powered-by-EmailOctopus-Branding ausblenden */
@@ -185,9 +192,9 @@ The magazine operates independently and in collaboration with a network of contr
     width: 0 !important;
     overflow: hidden !important;
   }
+
   @media (max-width: 600px) {
     .sidebar { display: none; }
-    .page-content { min-height: auto; align-items: flex-start; }
     .mobile-header {
       display: block;
       width: 100%;
@@ -214,15 +221,17 @@ The magazine operates independently and in collaboration with a network of contr
       width: 100%;
       padding: 38px 4px 0;
     }
-    .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; transition: color 0.15s; }
+    .mobile-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: #aaa;
+      letter-spacing: 0;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
     .mobile-nav a:hover { color: #111; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
-    .info-section { padding: 20px 20px 80px; }
-
-    /* Mobile: Subscribe-Input etwas schmaler */
-    .subscribe-wrap :global(input[type="email"]) {
-      width: 160px !important;
-    }
+    .newsletter-section { padding: 20px; }
   }
 </style>
