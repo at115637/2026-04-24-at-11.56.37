@@ -58,10 +58,35 @@ const articlesData = articles.map((a) => ({
       el.className = 'result-item';
       el.setAttribute('data-astro-reload', '');
       el.textContent = a.title;
+      // Inline-Styles als zusätzliche Absicherung gegen Browser-Default Link-Styles
+      el.style.cssText = 'font-family: "DM Mono", monospace; font-size: 11px; font-weight: 300; color: #111; text-decoration: none; display: block; cursor: pointer; transition: color 0.15s;';
+      el.addEventListener('mouseenter', () => { el.style.color = '#aaa'; });
+      el.addEventListener('mouseleave', () => { el.style.color = '#111'; });
       results.appendChild(el);
     });
   });
 </script>
+<style is:global>
+  /* Suchergebnis-Items: per JS dynamisch erstellt, brauchen globale Styles */
+  a.result-item,
+  a.result-item:link,
+  a.result-item:visited,
+  a.result-item:active {
+    font-family: 'DM Mono', monospace !important;
+    font-size: 11px !important;
+    font-weight: 300 !important;
+    color: #111 !important;
+    text-decoration: none !important;
+    display: block !important;
+    transition: color 0.15s !important;
+    cursor: pointer !important;
+  }
+  a.result-item:hover {
+    color: #aaa !important;
+    text-decoration: none !important;
+  }
+</style>
+
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
@@ -75,24 +100,6 @@ const articlesData = articles.map((a) => ({
   #searchInput { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 300; color: #111; border: none; border-bottom: 0.5px solid #ddd; outline: none; width: 100%; padding: 8px 0; background: transparent; }
   #searchInput::placeholder { color: #ccc; }
   .results { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
-
-  /* Suchergebnis: kein Link-Look — nicht blau, nicht unterstrichen */
-  a.result-item,
-  a.result-item:link,
-  a.result-item:visited,
-  a.result-item:active {
-    font-family: 'DM Mono', monospace !important;
-    font-size: 11px !important;
-    font-weight: 300 !important;
-    color: #111 !important;
-    text-decoration: none !important;
-    display: block;
-    transition: color 0.15s;
-  }
-  a.result-item:hover {
-    color: #aaa !important;
-    text-decoration: none !important;
-  }
 
   .no-results { font-family: 'DM Mono', monospace; font-size: 10px; color: #ccc; }
   @media (max-width: 600px) {
