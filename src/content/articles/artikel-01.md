@@ -1,6 +1,6 @@
 ---
 title: "Songs for a hotel room"
-date: "2026-05-02"
+date: "2026-04-24"
 coverImage: "/media/Artikel1.jpeg"
 imageCredit: "Image: Ole Rohmert"
 author: "Kian Matine"
@@ -25,3 +25,5 @@ I was so seduced by this safe world around me, it was like living with my parent
 - [Bonewhiteglory — Nature and Organisation (feat. Current93, Rose Mcdowall)](https://soundcloud.com/zahar_kashmar/bonewhiteglory)
 - [BLACK KRAY — 7 TEARZ 7 DOVES 7 BLUNTS (PROD. BY TRIAD$) [GOTH LUV] (2014)](https://soundcloud.com/blackkraymusic/7-tearz-7-doves-7-blunts-prod-by-triad)
 - Goldberg Variations, BWV 988: Aria — Johann Sebastian Bach, Glenn Gould
+
+[Go to Playlist →](https://on.soundcloud.com/0ffS7VYctFnMeqbbP0)
