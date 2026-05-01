@@ -94,12 +94,25 @@ const { title } = Astro.props;
 
     @media (max-width: 600px) {
       #site-title { display: none; }
+      #site-handwriting { display: none; }
       .page-content { margin-left: 0; padding-top: 0; }
+    }
+
+    #site-handwriting {
+      position: fixed;
+      top: 48px;
+      right: 32px;
+      height: 14px;
+      width: auto;
+      pointer-events: none;
+      opacity: 0.85;
+      z-index: 300;
     }
   </style>
 </head>
 <body>
   <a id="site-title" href="/">2026-04-24 at 11.56.37</a>
+  <img id="site-handwriting" src="/handschrift_clean.png" alt="" aria-hidden="true" />
   <slot />
 </body>
 </html>
