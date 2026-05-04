@@ -1,6 +1,6 @@
 ---
 title: "Songs for a hotel room"
-date: "2026-04-24"
+date: "2026-05-02"
 coverImage: "/media/Artikel1.jpeg"
 imageCredit: "Image: Ole Rohmert"
 author: "Kian Matine"
