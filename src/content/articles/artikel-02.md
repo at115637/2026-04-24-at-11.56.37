@@ -1,6 +1,6 @@
 ---
 title: "Titel"
-date: "2026-05-07"
+date: "2026-05-09"
 coverImage: "/media/Artikel2_01.jpeg"
 imageCredit: "Image: Ole Rohmert"
 author: "Ole Rohmert"
