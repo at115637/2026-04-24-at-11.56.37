@@ -187,7 +187,15 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     margin-bottom: 12px;
     color: #999;
   }
-  .body img { display: none; }
+  .body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+  }
+  .body img:last-child {
+    margin-bottom: 0;
+  }
   .body audio, .body video { width: 100%; margin: 20px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
