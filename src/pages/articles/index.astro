@@ -30,7 +30,7 @@ const articles = (await getCollection('articles')).sort(
     <section class="grid">
       {articles.map((article) => (
         <a data-astro-reload href={`/articles/${article.slug}`} class="article-thumb">
-          <img src={article.data.coverImage} alt={article.data.title} loading="lazy" />
+          <img src={article.data.titleImage ?? article.data.coverImage} alt={article.data.title} loading="lazy" />
           <p class="article-caption">{article.data.title}</p>
         </a>
       ))}

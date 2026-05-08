@@ -34,7 +34,7 @@ const latest = articles[0];
       {latest && (
         <a data-astro-reload href={`/articles/${latest.slug}`} class="hero-link">
           <div class="hero-img">
-            <img src={latest.data.coverImage} alt={latest.data.title} />
+            <img src={latest.data.titleImage ?? latest.data.coverImage} alt={latest.data.title} loading="lazy" />
           </div>
         </a>
       )}
