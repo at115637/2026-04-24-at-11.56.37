@@ -1,6 +1,8 @@
 ---
 title: "Titel"
 date: "2026-05-09"
+titleImage: "/media/titel_artikel2.jpeg"
+titleImageCredit: ""
 coverImage: "/media/Artikel2_01.jpeg"
 imageCredit: "Image: Ole Rohmert"
 author: "Ole Rohmert"
