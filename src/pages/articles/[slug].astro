@@ -44,9 +44,23 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
 
   <div id="top" class="page-content">
     <article class="article-content">
+
+      {/* Titelbild — nur wenn titleImage im Frontmatter gesetzt */}
+      {article.data.titleImage && (
+        <div class="cover-wrap">
+          <div class="cover">
+            <img src={article.data.titleImage} alt={article.data.title} loading="lazy" decoding="async" />
+          </div>
+          {article.data.titleImageCredit && (
+            <p class="image-credit">{article.data.titleImageCredit}</p>
+          )}
+        </div>
+      )}
+
+      {/* Cover-Bild (bisheriges Hotelzimmer-Foto) */}
       <div class="cover-wrap">
         <div class="cover">
-          <img src={article.data.coverImage} alt={article.data.title} />
+          <img src={article.data.coverImage} alt={article.data.title} loading="lazy" decoding="async" />
         </div>
         {article.data.imageCredit && (
           <p class="image-credit">{article.data.imageCredit}</p>
@@ -187,15 +201,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     margin-bottom: 12px;
     color: #999;
   }
-  .body img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;
-  }
-  .body img:last-child {
-    margin-bottom: 0;
-  }
+  .body img { display: none; }
   .body audio, .body video { width: 100%; margin: 20px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
