@@ -45,7 +45,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   <div id="top" class="page-content">
     <article class="article-content">
 
-      {/* Titelbild — nur wenn titleImage im Frontmatter gesetzt */}
+      {/* Titelbild — ersetzt das bisherige coverImage */}
       {article.data.titleImage && (
         <div class="cover-wrap">
           <div class="cover">
@@ -56,16 +56,16 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
           )}
         </div>
       )}
-
-      {/* Cover-Bild (bisheriges Hotelzimmer-Foto) */}
-      <div class="cover-wrap">
-        <div class="cover">
-          <img src={article.data.coverImage} alt={article.data.title} loading="lazy" decoding="async" />
+      {!article.data.titleImage && (
+        <div class="cover-wrap">
+          <div class="cover">
+            <img src={article.data.coverImage} alt={article.data.title} loading="lazy" decoding="async" />
+          </div>
+          {article.data.imageCredit && (
+            <p class="image-credit">{article.data.imageCredit}</p>
+          )}
         </div>
-        {article.data.imageCredit && (
-          <p class="image-credit">{article.data.imageCredit}</p>
-        )}
-      </div>
+      )}
 
       {/* 1. Überschrift fett, klar als Titel lesbar */}
       <h1 class="article-title">{article.data.title}</h1>
