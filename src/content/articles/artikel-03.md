@@ -8,7 +8,7 @@ coverImage: "/media/titel_artikel3.jpeg"
 imageCredit: "Image: Philipp Burwinkel"
 author: "Philipp Burwinkel"
 ---
-*My Beautiful is a recurring column, devoted to Philipp Burwinkel's subjective engagement with excerpts from film, literature, art and music that affect him because of their sublime character. The articulation of this quality arises from a sensibility shaped by personal experience and inborn profile. Each „something" is expressed in a form that is loosely essayistic, yet otherwise free. By situating within a broader thematic field, the column gradually attempts a possible reinterpretation of the semiotic idea governing its meaning.*
+*My Beautiful is a recurring column, devoted to Philipp Burwinkel's subjective engagement with excerpts from film, literature, art and music that affect him because of their sublime character. Each „something" is expressed in a form that is loosely essayistic, yet otherwise free. By situating within a broader thematic field, the column gradually attempts a possible reinterpretation of the semiotic idea governing its meaning.*
 
 &nbsp;
 
