@@ -1,7 +1,7 @@
 ---
 title: "My Beautiful Violence"
 subtitle: "1: On the Two Brothers from Gummo"
-date: "2026-05-15"
+date: "2026-05-16"
 titleImage: "/media/titel_artikel3.jpeg"
 titleImageCredit: "Image: Philipp Burwinkel"
 coverImage: "/media/titel_artikel3.jpeg"
