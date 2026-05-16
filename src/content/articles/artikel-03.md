@@ -1,6 +1,6 @@
 ---
 title: "My Beautiful Violence"
-date: "2026-05-15"
+date: "2026-05-16"
 titleImage: "/media/titel_artikel3.jpeg"
 titleImageCredit: ""
 coverImage: "/media/titel_artikel3.jpeg"
