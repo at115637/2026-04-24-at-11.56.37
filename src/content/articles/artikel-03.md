@@ -1,13 +1,16 @@
 ---
 title: "My Beautiful Violence"
-date: "2026-05-16"
+subtitle: "1: On the Two Brothers from Gummo"
+date: "2026-05-15"
 titleImage: "/media/titel_artikel3.jpeg"
-titleImageCredit: ""
+titleImageCredit: "Image: Philipp Burwinkel"
 coverImage: "/media/titel_artikel3.jpeg"
-imageCredit: ""
+imageCredit: "Image: Philipp Burwinkel"
 author: "Philipp Burwinkel"
 ---
 *My Beautiful is a recurring column, devoted to Philipp Burwinkel's subjective engagement with excerpts from film, literature, art and music that affect him because of their sublime character. The articulation of this quality arises from a sensibility shaped by personal experience and inborn profile. Each „something" is expressed in a form that is loosely essayistic, yet otherwise free. By situating within a broader thematic field, the column gradually attempts a possible reinterpretation of the semiotic idea governing its meaning.*
+
+&nbsp;
 
 Gummo, a film by Harmony Korine from 1997, made the year after I was born, lives off its unrelenting superficial rawness. Through classism in the form of extreme poverty and lack of education in the neglected Xenia, Ohio, after it was struck by a tornado, it exposes a social divide and thus, from the inherently more privileged perspective of a generic viewer, presents a social critique of the ostensibly shocking circumstances of this place characterized by purposelessness.
 

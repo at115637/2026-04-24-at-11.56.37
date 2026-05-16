@@ -70,6 +70,11 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
       {/* 1. Überschrift fett, klar als Titel lesbar */}
       <h1 class="article-title">{article.data.title}</h1>
 
+      {/* Untertitel falls vorhanden */}
+      {article.data.subtitle && (
+        <p class="article-subtitle">{article.data.subtitle}</p>
+      )}
+
       {/* 4. Datum direkt unter dem Titel, ausgegraut */}
       <p class="article-date">{formattedDate}</p>
 
@@ -130,8 +135,8 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   .article-content { max-width: 560px; margin: 0 auto; padding: 20px 40px 100px; }
 
   .cover-wrap { margin-bottom: 8px; }
-  .cover { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
-  .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover { width: 100%; overflow: hidden; }
+  .cover img { width: 100%; height: auto; display: block; }
   .image-credit {
     font-family: 'DM Mono', monospace;
     font-size: 9px;
@@ -150,8 +155,16 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     color: #999 !important;
     line-height: 1.2 !important;
     margin-top: 14px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 2px !important;
     letter-spacing: -0.005em !important;
+  }
+  .article-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: #bbb;
+    margin-bottom: 4px;
+    line-height: 1.4;
   }
 
   /* 4. Datum direkt unter dem Titel — kleiner, hellgrau */
