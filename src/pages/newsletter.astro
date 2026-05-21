@@ -24,6 +24,12 @@ import Base from '../layouts/Base.astro';
 
   <div class="page-content">
     <section class="newsletter-section">
+
+      <!-- Ausstellungsfenster: einfach news.jpeg in public/media/ ersetzen -->
+      <div class="news-window">
+        <img src="/media/news.jpeg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'" />
+      </div>
+
       <p class="newsletter-intro">Subscribe to be notified when a new article is published.</p>
       <div class="subscribe-wrap">
         <script async src="https://eocampaign1.com/form/5b51eefc-43cc-11f1-ad77-67a4c0614056.js" data-form="5b51eefc-43cc-11f1-ad77-67a4c0614056"></script>
@@ -33,23 +39,18 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <script is:inline>
-  // EmailOctopus "Powered by" Branding nachträglich ausblenden
   (function () {
     const wrap = document.querySelector('.subscribe-wrap');
     if (!wrap) return;
     const hideBranding = () => {
       wrap.querySelectorAll('a[href*="emailoctopus" i]').forEach((a) => {
         a.style.setProperty('display', 'none', 'important');
-        if (a.parentElement) {
-          a.parentElement.style.setProperty('display', 'none', 'important');
-        }
+        if (a.parentElement) a.parentElement.style.setProperty('display', 'none', 'important');
       });
       wrap.querySelectorAll('*').forEach((el) => {
         if (el.children.length === 0 && /powered\s*by/i.test(el.textContent || '')) {
           el.style.setProperty('display', 'none', 'important');
-          if (el.parentElement) {
-            el.parentElement.style.setProperty('display', 'none', 'important');
-          }
+          if (el.parentElement) el.parentElement.style.setProperty('display', 'none', 'important');
         }
       });
     };
@@ -65,30 +66,39 @@ import Base from '../layouts/Base.astro';
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* Sidebar / Navigation */
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .nav-link {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: #aaa;
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    display: block;
-    transition: color 0.15s;
-  }
+  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; transition: color 0.15s; }
   .nav-link:hover { color: #111; }
   .nav-link.active { color: #111; }
   .nav-link.disabled { color: #ddd; pointer-events: none; }
   .mobile-header { display: none; }
 
-  /* Newsletter-Inhalt */
-  .page-content { min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; }
+  .page-content {
+    margin-left: 140px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .newsletter-section {
     max-width: 560px;
     width: 100%;
     padding: 40px;
   }
+
+  /* Ausstellungsfenster */
+  .news-window {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  .news-window img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .newsletter-intro {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -98,10 +108,8 @@ import Base from '../layouts/Base.astro';
     margin-bottom: 24px;
   }
 
-  /* EmailOctopus Form-Overrides — eine Zeile, dezent */
-  .subscribe-wrap {
-    width: 100%;
-  }
+  /* EmailOctopus overrides */
+  .subscribe-wrap { width: 100%; }
   .subscribe-wrap :global(form),
   .subscribe-wrap :global([class*="eocampaign"]) {
     background: transparent !important;
@@ -114,8 +122,6 @@ import Base from '../layouts/Base.astro';
     flex-direction: column !important;
     gap: 18px !important;
   }
-
-  /* Input-Feld — voll breit, mit Unterstrich */
   .subscribe-wrap :global(input[type="email"]) {
     font-family: 'DM Mono', monospace !important;
     font-size: 11px !important;
@@ -136,8 +142,6 @@ import Base from '../layouts/Base.astro';
     color: #ccc !important;
     font-family: 'DM Mono', monospace !important;
   }
-
-  /* Submit-Button — wie ein Menü-Reiter */
   .subscribe-wrap :global(button[type="submit"]),
   .subscribe-wrap :global(input[type="submit"]) {
     font-family: 'DM Mono', monospace !important;
@@ -156,15 +160,9 @@ import Base from '../layouts/Base.astro';
     width: auto !important;
     height: auto !important;
     align-self: flex-start !important;
-    text-align: left !important;
   }
   .subscribe-wrap :global(button[type="submit"]:hover),
-  .subscribe-wrap :global(input[type="submit"]:hover) {
-    color: #111 !important;
-    background: transparent !important;
-  }
-
-  /* Erfolgsmeldung etc. */
+  .subscribe-wrap :global(input[type="submit"]:hover) { color: #111 !important; background: transparent !important; }
   .subscribe-wrap :global(label),
   .subscribe-wrap :global(p),
   .subscribe-wrap :global(span) {
@@ -175,17 +173,11 @@ import Base from '../layouts/Base.astro';
     background: transparent !important;
     margin: 0 !important;
   }
-
-  /* Powered-by-EmailOctopus-Branding ausblenden */
   .subscribe-wrap :global(.octopus-branding),
   .subscribe-wrap :global(.eo-branding),
-  .subscribe-wrap :global(.branding),
   .subscribe-wrap :global([class*="powered"]),
   .subscribe-wrap :global([class*="branding"]),
-  .subscribe-wrap :global([class*="Powered"]),
-  .subscribe-wrap :global([class*="Branding"]),
-  .subscribe-wrap :global(a[href*="emailoctopus"]),
-  .subscribe-wrap :global(a[href*="EmailOctopus"]) {
+  .subscribe-wrap :global(a[href*="emailoctopus"]) {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
@@ -225,13 +217,13 @@ import Base from '../layouts/Base.astro';
       font-family: 'DM Mono', monospace;
       font-size: 9px;
       color: #aaa;
-      letter-spacing: 0;
       text-decoration: none;
       transition: color 0.15s;
     }
     .mobile-nav a:hover { color: #111; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
+    .page-content { margin-left: 0; }
     .newsletter-section { padding: 20px; }
   }
 </style>
