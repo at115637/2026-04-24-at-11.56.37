@@ -81,7 +81,8 @@ import Base from '../layouts/Base.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 80px;
   }
 
   .newsletter-section {
@@ -231,8 +232,13 @@ import Base from '../layouts/Base.astro';
     .mobile-nav a:hover { color: #111; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
-    .page-content { margin-left: 0; padding-left: 0; }
-    .news-window { padding: 20px 20px 10px; max-height: 40vh; }
+    .page-content {
+      margin-left: 0;
+      padding-left: 0;
+      padding-top: 20px;
+      justify-content: flex-start;
+    }
+    .news-window { padding: 10px 20px 40px; max-height: none; }
     .news-window img { max-height: 35vh; }
     .newsletter-section { padding: 20px; }
   }
