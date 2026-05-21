@@ -23,13 +23,14 @@ import Base from '../layouts/Base.astro';
   </div>
 
   <div class="page-content">
+
+    <!-- Ausstellungsfenster oben -->
+    <div class="news-window">
+      <img src="/media/news.jpeg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'" />
+    </div>
+
+    <!-- Newsletter unten -->
     <section class="newsletter-section">
-
-      <!-- Ausstellungsfenster: einfach news.jpeg in public/media/ ersetzen -->
-      <div class="news-window">
-        <img src="/media/news.jpeg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'" />
-      </div>
-
       <p class="newsletter-intro">Subscribe to be notified when a new article is published.</p>
       <div class="subscribe-wrap">
         <script async src="https://eocampaign1.com/form/5b51eefc-43cc-11f1-ad77-67a4c0614056.js" data-form="5b51eefc-43cc-11f1-ad77-67a4c0614056"></script>
@@ -78,24 +79,33 @@ import Base from '../layouts/Base.astro';
     margin-left: 140px;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
   }
 
   .newsletter-section {
     max-width: 560px;
     width: 100%;
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
-  /* Ausstellungsfenster */
+  /* Ausstellungsfenster — obere Hälfte */
   .news-window {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px 20px;
+    max-width: 560px;
     width: 100%;
-    margin-bottom: 32px;
   }
   .news-window img {
     width: 100%;
     height: auto;
+    max-height: 45vh;
+    object-fit: contain;
     display: block;
   }
 
@@ -224,6 +234,8 @@ import Base from '../layouts/Base.astro';
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .page-content { margin-left: 0; }
+    .news-window { padding: 20px 20px 10px; max-height: 40vh; }
+    .news-window img { max-height: 35vh; }
     .newsletter-section { padding: 20px; }
   }
 </style>
