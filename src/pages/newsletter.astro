@@ -76,38 +76,33 @@ import Base from '../layouts/Base.astro';
   .mobile-header { display: none; }
 
   .page-content {
-    margin-left: 140px;
+    padding-left: 140px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
-    padding-bottom: 15vh;
-    position: relative;
+    justify-content: center;
   }
 
   .newsletter-section {
     max-width: 560px;
     width: 100%;
-    padding: 0 40px 40px;
+    padding: 0 40px 60px;
   }
 
-  /* Ausstellungsfenster — position: absolute, mittig zwischen Rand und Newsletter */
+  /* Ausstellungsfenster */
   .news-window {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 480px;
-    width: calc(100% - 180px);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 60px 40px 40px;
+    max-width: 560px;
+    width: 100%;
   }
   .news-window img {
     width: 100%;
     height: auto;
-    max-height: 40vh;
+    max-height: 50vh;
     object-fit: contain;
     display: block;
   }
