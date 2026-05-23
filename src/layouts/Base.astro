@@ -30,7 +30,7 @@ const { title } = Astro.props;
       text-decoration: none;
     }
     #site-logo img {
-      height: 84px;
+      height: 109px;
       width: auto;
       display: block;
     }
@@ -93,7 +93,16 @@ const { title } = Astro.props;
     }
 
     @media (max-width: 600px) {
-      #site-logo { display: none; }
+      #site-logo {
+        position: fixed;
+        top: 10px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #site-logo img {
+        height: 70px;
+      }
       .page-content { margin-left: 0; padding-top: 0; }
     }
   </style>
