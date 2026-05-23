@@ -80,7 +80,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
 
       {/* 7. Autor unter dem Datum, "written by" Prefix */}
       {article.data.author && (
-        <p class="article-author">written by {article.data.author}</p>
+        <p class="article-author">by {article.data.author}</p>
       )}
 
       <div class="body">
@@ -214,7 +214,14 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     margin-bottom: 12px;
     color: #999;
   }
-  .body img { display: block; width: 100%; height: auto; margin: 24px 0; }
+  .body img {
+    display: block;
+    width: calc(100% + 200px);
+    margin-left: -100px;
+    height: auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
   .body audio, .body video { width: 100%; margin: 20px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
@@ -318,6 +325,13 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
 
     .article-content { padding: 40px 20px 80px; }
+
+    .body img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-top: 36px;
+      margin-bottom: 36px;
+    }
 
     .article-title {
       font-size: 11px !important;
