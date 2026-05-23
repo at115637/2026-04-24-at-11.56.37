@@ -83,7 +83,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
         <p class="article-author">by {article.data.author}</p>
       )}
 
-      <div class="body">
+      <div class={`body body-${article.slug}`}>
         <Content />
       </div>
 
@@ -216,11 +216,15 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   }
   .body img {
     display: block;
-    width: calc(100% + 200px);
-    margin-left: -100px;
+    width: 100%;
     height: auto;
     margin-top: 48px;
     margin-bottom: 48px;
+  }
+  /* Artikel 04: erstes Body-Bild (Panorama) breiter */
+  .body-artikel-04 p:first-child img {
+    width: calc(100% + 200px);
+    margin-left: -100px;
   }
   .body audio, .body video { width: 100%; margin: 20px 0; display: block; }
   .body audio { filter: grayscale(1); }
@@ -327,10 +331,12 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     .article-content { padding: 40px 20px 80px; }
 
     .body img {
-      width: calc(100% + 40px);
-      margin-left: -20px;
       margin-top: 36px;
       margin-bottom: 36px;
+    }
+    .body-artikel-04 p:first-child img {
+      width: calc(100% + 40px);
+      margin-left: -20px;
     }
 
     .article-title {
