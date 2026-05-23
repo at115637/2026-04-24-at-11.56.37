@@ -29,10 +29,13 @@ const { title } = Astro.props;
       z-index: 50;
       text-decoration: none;
     }
-    #site-logo img {
+    #site-logo .logo-desktop {
       height: 109px;
       width: auto;
       display: block;
+    }
+    #site-logo .logo-mobile {
+      display: none;
     }
     #site-logo:hover { opacity: 0.7; }
 
@@ -100,15 +103,23 @@ const { title } = Astro.props;
         left: 50%;
         transform: translateX(-50%);
       }
-      #site-logo img {
-        height: 70px;
+      #site-logo .logo-desktop {
+        display: none;
+      }
+      #site-logo .logo-mobile {
+        display: block;
+        height: 18px;
+        width: auto;
       }
       .page-content { margin-left: 0; padding-top: 0; }
     }
   </style>
 </head>
 <body>
-  <a id="site-logo" href="/"><img src="/logo_2026_magazine.png" alt="2026 Magazine" /></a>
+  <a id="site-logo" href="/">
+    <img class="logo-desktop" src="/logo_2026_magazine.png" alt="2026 Magazine" />
+    <img class="logo-mobile" src="/logo_2026_text.png" alt="2026 Magazine" />
+  </a>
   <slot />
 </body>
 </html>
