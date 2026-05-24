@@ -12,7 +12,6 @@ import Base from '../layouts/Base.astro';
     </ul>
   </div>
   <div class="mobile-header">
-    <a data-astro-reload href="/" class="mobile-logo">2026-04-24 at 11.56.37</a>
     <nav class="mobile-nav">
       <a data-astro-reload href="/search">SEARCH</a>
       <a data-astro-reload href="/articles">ARTICLES</a>
@@ -78,23 +77,28 @@ import Base from '../layouts/Base.astro';
   .page-content {
     padding-left: 140px;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
   }
 
   .newsletter-section {
     max-width: 560px;
     width: 100%;
     padding: 0 40px;
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 70px);
+    transform: translate(-50%, -50%);
   }
 
-  /* Ausstellungsfenster */
+  /* Ausstellungsfenster — mittig zwischen oberem Rand und Newsletter */
   .news-window {
     max-width: 560px;
     width: 100%;
-    padding: 0 40px 40px;
+    padding: 0 40px;
+    position: absolute;
+    top: 25%;
+    left: calc(50% + 70px);
+    transform: translate(-50%, -50%);
   }
   .news-window img {
     width: 100%;
@@ -197,7 +201,6 @@ import Base from '../layouts/Base.astro';
       width: 100%;
       padding: 14px 20px 0;
     }
-    .mobile-logo {
       font-family: 'DM Mono', monospace;
       font-size: 12px;
       font-weight: 500;
@@ -231,11 +234,16 @@ import Base from '../layouts/Base.astro';
     .page-content {
       margin-left: 0;
       padding-left: 0;
-      padding-top: 20px;
-      justify-content: flex-start;
     }
-    .news-window { padding: 10px 20px 40px; max-height: none; }
-    .news-window img { max-height: 35vh; }
-    .newsletter-section { padding: 20px; }
+    .newsletter-section {
+      left: 50%;
+      padding: 0 20px;
+    }
+    .news-window {
+      left: 50%;
+      padding: 0 20px;
+      top: 20%;
+    }
+    .news-window img { max-height: 25vh; }
   }
 </style>
