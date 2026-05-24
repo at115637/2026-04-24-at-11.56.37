@@ -12,6 +12,7 @@ import Base from '../layouts/Base.astro';
     </ul>
   </div>
   <div class="mobile-header">
+    <a data-astro-reload href="/" class="mobile-logo">2026-04-24 at 11.56.37</a>
     <nav class="mobile-nav">
       <a data-astro-reload href="/search">SEARCH</a>
       <a data-astro-reload href="/articles">ARTICLES</a>
@@ -80,8 +81,7 @@ import Base from '../layouts/Base.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 80px;
+    justify-content: center;
   }
 
   .newsletter-section {
@@ -95,7 +95,7 @@ import Base from '../layouts/Base.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 40px 80px;
+    padding: 0 40px 60px;
     max-width: 560px;
     width: 100%;
   }
@@ -200,7 +200,21 @@ import Base from '../layouts/Base.astro';
       width: 100%;
       padding: 14px 20px 0;
     }
-    
+    .mobile-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #111;
+      text-decoration: none;
+      position: fixed;
+      top: 14px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 100;
+      background: transparent;
+      pointer-events: auto;
+    }
     .mobile-nav {
       display: flex;
       justify-content: space-between;
