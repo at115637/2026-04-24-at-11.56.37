@@ -29,7 +29,15 @@ const articles = (await getCollection('articles')).sort(
     <section class="grid">
       {articles.map((article) => (
         <a data-astro-reload href={`/articles/${article.slug}`} class="article-thumb">
-          <img src={article.data.titleImage ?? article.data.coverImage} alt={article.data.title} loading="lazy" />
+          {(article.data.titleImage || article.data.coverImage) ? (
+            <img src={article.data.titleImage ?? article.data.coverImage} alt={article.data.title} loading="lazy" />
+          ) : article.data.headerText ? (
+            <div class="header-text-preview">
+              {article.data.headerText.split('\n').map((line: string) =>
+                line === '' ? <br /> : <span>{line}<br /></span>
+              )}
+            </div>
+          ) : null}
           <p class="article-caption">{article.data.title}</p>
         </a>
       ))}
@@ -53,6 +61,16 @@ const articles = (await getCollection('articles')).sort(
   .article-thumb:hover img { opacity: 0.7; }
   .article-caption { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300; color: #aaa; margin-top: 10px; transition: color 0.15s; }
   .article-thumb:hover .article-caption { color: #111; }
+  .header-text-preview {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 400;
+    color: #999;
+    line-height: 1.5;
+    white-space: pre-line;
+    transition: color 0.15s;
+  }
+  .article-thumb:hover .header-text-preview { color: #111; }
 
   @media (max-width: 600px) {
     .sidebar { display: none; }

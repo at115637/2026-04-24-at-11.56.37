@@ -45,7 +45,17 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     <article class="article-content">
 
       {/* Titelbild — ersetzt das bisherige coverImage */}
-      {article.data.titleImage && (
+      {/* Header-Text statt Bild (z.B. Artikel 04) */}
+      {article.data.headerText && (
+        <div class="header-text">
+          {article.data.headerText.split('\n').map((line: string) =>
+            line === '' ? <br /> : <span>{line}<br /></span>
+          )}
+        </div>
+      )}
+
+      {/* Titelbild — nur wenn vorhanden und kein headerText */}
+      {!article.data.headerText && article.data.titleImage && (
         <div class="cover-wrap">
           <div class="cover">
             <img src={article.data.titleImage} alt={article.data.title} loading="lazy" decoding="async" />
@@ -55,7 +65,7 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
           )}
         </div>
       )}
-      {!article.data.titleImage && (
+      {!article.data.headerText && !article.data.titleImage && article.data.coverImage && (
         <div class="cover-wrap">
           <div class="cover">
             <img src={article.data.coverImage} alt={article.data.title} loading="lazy" decoding="async" />
@@ -136,6 +146,17 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
   .cover-wrap { margin-bottom: 8px; }
   .cover { width: 100%; overflow: hidden; }
   .cover img { width: 100%; height: auto; display: block; }
+
+  .header-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    white-space: pre-line;
+  }
+
   .image-credit {
     font-family: 'DM Mono', monospace;
     font-size: 9px;
