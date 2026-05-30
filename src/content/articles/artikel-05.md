@@ -1,6 +1,6 @@
 ---
 title: "Things are rendered into nouns"
-date: "2026-05-29"
+date: "2026-05-30"
 titleImage: "/media/titel_artikel5.gif"
 titleImageCredit: "Ye Li, Landing Surfaces, 2024. Detail"
 coverImage: "/media/titel_artikel5.gif"
