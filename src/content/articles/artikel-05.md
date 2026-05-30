@@ -2,9 +2,9 @@
 title: "Things are rendered into nouns"
 date: "2026-05-29"
 titleImage: "/media/titel_artikel5.gif"
-titleImageCredit: "Image: Ye Li"
+titleImageCredit: "Ye Li, Landing Surfaces, 2024. Detail"
 coverImage: "/media/titel_artikel5.gif"
-imageCredit: "Image: Ye Li"
+imageCredit: "Ye Li, Landing Surfaces, 2024. Detail"
 author: "Ye Li"
 ---
 "Clarity" can sometimes feel like a form of violence.
@@ -57,8 +57,17 @@ Perhaps it is only a delay.
 
 A moment stretched continuously outward, never quite reaching its end.
 
-![](/media/Artikel5_01.jpg)
+<figure class="img-full">
+<img src="/media/Artikel5_01.jpg" alt="" loading="lazy" />
+<figcaption>Ye Li, it could stay like this for a very long time. 2025. Detail.</figcaption>
+</figure>
 
-![](/media/Artikel5_02.jpg)
+<figure class="img-small-right">
+<img src="/media/Artikel5_02.jpg" alt="" loading="lazy" />
+<figcaption>Image: Ye Li</figcaption>
+</figure>
 
-![](/media/Artikel5_03.jpg)
+<figure class="img-full">
+<img src="/media/Artikel5_03.jpg" alt="" loading="lazy" />
+<figcaption>Image: Ye Li</figcaption>
+</figure>

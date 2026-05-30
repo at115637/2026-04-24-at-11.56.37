@@ -246,6 +246,40 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
     width: calc(100% + 200px);
     margin-left: -100px;
   }
+  /* Figure layouts für Artikel 05 */
+  .body figure {
+    margin: 48px 0;
+    padding: 0;
+  }
+  .body figure img {
+    margin: 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+  .body figure figcaption {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    font-weight: 300;
+    color: #bbb;
+    text-align: right;
+    margin-top: 5px;
+  }
+  .body .img-full img {
+    width: 100%;
+  }
+  .body .img-small-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .body .img-small-right img {
+    width: 50%;
+  }
+  .body .img-small-right figcaption {
+    width: 50%;
+  }
   .body audio, .body video { width: 100%; margin: 20px 0; display: block; }
   .body audio { filter: grayscale(1); }
 
@@ -344,6 +378,8 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
       width: calc(100% + 40px);
       margin-left: -20px;
     }
+    .body .img-small-right img { width: 70%; }
+    .body .img-small-right figcaption { width: 70%; }
 
     .article-title {
       font-size: 11px !important;
