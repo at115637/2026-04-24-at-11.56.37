@@ -1,6 +1,6 @@
 ---
 title: "2026: Monologue With You"
-date: "2026-06-05"
+date: "2026-06-06"
 titleImage: "/media/titel_artikel6.jpeg"
 titleImageCredit: "Image by: Laurids Oder"
 coverImage: "/media/titel_artikel6.jpeg"
