@@ -1,8 +1,8 @@
 ---
-title: "you were standing right next to me, dreaming"
+title: "2026: Monologue With You"
 date: "2026-06-05"
 titleImage: "/media/titel_artikel6.jpeg"
-titleImageCredit: ""
+titleImageCredit: "Image by: Laurids Oder"
 coverImage: "/media/titel_artikel6.jpeg"
 imageCredit: ""
 author: "Laurids Oder"
