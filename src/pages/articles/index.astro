@@ -12,7 +12,7 @@ const articles = (await getCollection('articles')).sort(
       <li><a data-astro-reload href="/search" class="nav-link">SEARCH</a></li>
       <li><a data-astro-reload href="/articles" class="nav-link active">ARTICLES</a></li>
       <li><a data-astro-reload href="/newsletter" class="nav-link">NEWSLETTER</a></li>
-      <li><a data-astro-reload href="/publications" class="nav-link disabled">PUBLICATIONS</a></li>
+      <li><a data-astro-reload href="/publications" class="nav-link">PUBLICATIONS</a></li>
       <li><a data-astro-reload href="/info" class="nav-link">INFO</a></li>
     </ul>
   </div>
@@ -21,7 +21,7 @@ const articles = (await getCollection('articles')).sort(
       <a data-astro-reload href="/search">SEARCH</a>
       <a data-astro-reload href="/articles" class="active">ARTICLES</a>
       <a data-astro-reload href="/newsletter">NEWS.</a>
-      <a data-astro-reload href="/publications" class="disabled">PUBL.</a>
+      <a data-astro-reload href="/publications" >PUBL.</a>
       <a data-astro-reload href="/info">INFO</a>
     </nav>
   </div>
