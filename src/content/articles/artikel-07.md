@@ -1,5 +1,5 @@
 ---
-title: "Vom Schmerz über die Schmerzlosigkeit"
+title: "Vertrieben aus dem Paradies"
 date: "2026-06-13"
 titleImage: "/media/titel_artikel7.jpeg"
 titleImageCredit: "André Derain, Bâteaux dans le Port de Collioure, 1905"
