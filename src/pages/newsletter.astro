@@ -25,7 +25,7 @@ import Base from '../layouts/Base.astro';
 
     <!-- Ausstellungsfenster oben -->
     <div class="news-window">
-      <img src="/media/news.jpeg" alt="" loading="lazy" onerror="this.parentElement.style.display='none'" />
+      <div class="news-placeholder"></div>
     </div>
 
     <!-- Newsletter unten -->
@@ -100,11 +100,10 @@ import Base from '../layouts/Base.astro';
     left: calc(50% + 70px);
     transform: translate(-50%, -50%);
   }
-  .news-window img {
+  .news-placeholder {
     width: 100%;
-    height: auto;
-    max-height: 40vh;
-    object-fit: contain;
+    height: 40vh;
+    background: #fff;
     display: block;
   }
 

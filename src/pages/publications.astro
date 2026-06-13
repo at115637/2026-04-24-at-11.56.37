@@ -21,19 +21,55 @@ import Base from '../layouts/Base.astro';
     </nav>
   </div>
   <div class="page-content">
-    <section class="empty"><p>coming soon</p></section>
+    <div class="loader" id="loader">
+      <span class="loader-text">Release 2027</span>
+      <span class="dots" id="dots"></span>
+    </div>
   </div>
 </Base>
+
+<script>
+  const dotsEl = document.getElementById('dots');
+  let count = 0;
+  setInterval(() => {
+    count = (count + 1) % 4;
+    dotsEl.textContent = '.'.repeat(count);
+  }, 500);
+</script>
+
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   .sidebar { position: fixed; top: 22px; left: 0; width: 140px; padding: 0 24px; z-index: 100; }
   .sidebar ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; }
-  .nav-link:hover { color: #333; }
+  .nav-link { font-family: 'DM Mono', monospace; font-size: 10px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; display: block; transition: color 0.15s; }
+  .nav-link:hover { color: #111; }
   .nav-link.active { color: #111; }
   .mobile-header { display: none; }
-  .empty { padding: 80px 40px; }
-  .empty p { font-family: 'DM Mono', monospace; font-size: 10px; color: #ddd; }
+
+  .page-content {
+    padding-left: 140px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loader {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 300;
+    color: #bbb;
+    letter-spacing: 0.06em;
+  }
+
+  .dots {
+    display: inline-block;
+    width: 1.2em;
+  }
+
   @media (max-width: 600px) {
     .sidebar { display: none; }
     .mobile-header {
@@ -41,7 +77,6 @@ import Base from '../layouts/Base.astro';
       width: 100%;
       padding: 14px 20px 0;
     }
-    
     .mobile-nav {
       display: flex;
       justify-content: space-between;
@@ -51,6 +86,6 @@ import Base from '../layouts/Base.astro';
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; transition: color 0.15s; }
     .mobile-nav a:hover { color: #111; }
     .mobile-nav a.active { color: #111; }
-    .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
+    .page-content { padding-left: 0; }
   }
 </style>
