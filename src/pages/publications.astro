@@ -23,7 +23,7 @@ import Base from '../layouts/Base.astro';
   <div class="page-content">
     <div class="loader">
       <div class="spinner"></div>
-      <span class="loader-text">Release 2027</span>
+      <span class="loader-text">PRINT RELEASE 2027 LOADING</span>
     </div>
   </div>
 </Base>
@@ -61,16 +61,26 @@ import Base from '../layouts/Base.astro';
     animation: spin 1.2s linear infinite;
   }
 
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
   .loader-text {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     font-weight: 300;
     color: #bbb;
     letter-spacing: 0.06em;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (min-width: 601px) {
+    .spinner {
+      width: 80px;
+      height: 80px;
+    }
+    .loader-text {
+      font-size: 9px;
+    }
   }
 
   @media (max-width: 600px) {
