@@ -1,11 +1,10 @@
 ---
-title: "Sér: n°501 CT31.05.2015 00:01:42
-"
+title: "Vermessung"
 date: "2026-06-20"
 titleImage: "/media/titel_artikel8.jpeg"
-titleImageCredit: "MR Schädel-Gesichtsschädel und HWS, Klinik Hirslanden, 23.01.2024"
+titleImageCredit: "Image by: Renée Lou Jungo"
 coverImage: "/media/titel_artikel8.jpeg"
-imageCredit: "MR Schädel-Gesichtsschädel und HWS, Klinik Hirslanden, 23.01.2024"
+imageCredit: "Image by: Renée Lou Jungo"
 author: "Renee Lou Jungo"
 ---
 Seit dem ich geboren bin, wurde ich vermessen. 3.3kg wog ich bei meiner Geburt. Doch meine Eltern kannten mich schon zuvor. Als einen blassen Geist der im Bauch herum schwebt, minutiös betrachtet und analysiert.
@@ -37,6 +36,12 @@ Ich habe gelernt mich selbst zu messen. Auf meiner Notizapp sammelte ich zuerst 
 
 Diese Vermessung meiner Selbst sind Beweismittel, die man liefert, nutzt, akkumuliert. Einzelstücke, Scherben, die einen Ist-Zustand fassen. Jedes Einzelstück hat ein anderes Medium, eine andere Textur. Sie definieren mich, machen mich lesbar. Ich sammle sie, vielleicht, irgendwann, bin ich komplett. Ein zerstückeltes Ensemble, was mich wiedergibt.
 
-![](/media/Artikel8_01.jpeg)
+<figure>
+  <img src="/media/Artikel8_01.jpeg" alt="" />
+  <figcaption>Image by: Renée Lou Jungo</figcaption>
+</figure>
 
-![](/media/Artikel8_02.jpeg)
+<figure>
+  <img src="/media/Artikel8_02.jpeg" alt="" />
+  <figcaption>Image by: Renée Lou Jungo</figcaption>
+</figure>
