@@ -12,19 +12,13 @@ Seit dem ich geboren bin, wurde ich vermessen. 3.3kg wog ich bei meiner Geburt. 
 Eine frühe Erinnerung ist eine komplizierte Kurve, an der man angeben kann wie schwer und gross man ist und dies mit dem Alter anpasst.
 
 Die komplizierte Kurve musste ich immer zum Arzt nehmen. Jedes Mal gab es einen neuen Punkt. Dieser Punkt auf der Kurve entwickelte sich weiter als ein Strich an einer Wand. Plötzlich konnte ich die Zahl räumlich mit mir vereinen.
-
 Das letzte Mal war ich bis da. Jetzt bis da.
-
 Dann wurde ich plötzlich nicht mehr vermessen. Ich war ausgewachsen. Ich konnte mich nicht mehr in Linien, Kurven oder Punkten beschreiben.
-
 Die Messung der Dinge, machte sie fassbar.
-
 Ich fand meinen Körper nie fassbar, eher fühlbar und vor Allem fühlbar, wenn er sich nicht so anfühlte, wie er sich normalerweise anfühlt. Das war der Beginn einer Suche nach einem kleinen Geist, der in mir lebt, mich umhüllt, in einen weissen Nebel eintauchen lässt und mit dem ich eins werde.
 
 Und so kam ich wieder zur Vermessung meiner Selbst. Wieder wurde ich zu Punkten, Strichen und Kurven. Nun bin ich ein 3D Modell, ein Negativ, ein Gespenst, eine Animation aus 500 Scheiben. Ich bin ein Livebild meiner Selbst, Schwaden aus schwarz und weiss.
-
 Sitzend kann ich mich live betrachten, ein rotierender Blick durch mein Inneres. Ich konnte mich selber nicht mehr fassen.
-
 Je präziser die Bilder von mir selbst wurden, desto mehr entfernte ich mich von ihnen. Sie waren unlesbar für mich, sie mussten mir erklärt werden.
 
 "Die Sprache der Wissenschaft spart jedes Rauschen aus, sie erlaubt keine Ambivalenz, keine Poesie, keine Brücke zwischen Wahrnehmung und Realität."
