@@ -1,5 +1,5 @@
 ---
-title: "Vermessung"
+title: "Sér: n°501 CT31.05.2015 00:01:42"
 date: "2026-06-20"
 titleImage: "/media/titel_artikel8.jpeg"
 titleImageCredit: "Image by: Renée Lou Jungo"
