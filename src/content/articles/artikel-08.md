@@ -1,5 +1,6 @@
 ---
-title: "Vermessung"
+title: "Sér: n°501 CT31.05.2015 00:01:42
+"
 date: "2026-06-20"
 titleImage: "/media/titel_artikel8.jpeg"
 titleImageCredit: "MR Schädel-Gesichtsschädel und HWS, Klinik Hirslanden, 23.01.2024"
