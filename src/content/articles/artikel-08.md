@@ -5,7 +5,7 @@ titleImage: "/media/titel_artikel8.jpeg"
 titleImageCredit: "Image by: Renée Lou Jungo"
 coverImage: "/media/titel_artikel8.jpeg"
 imageCredit: "Image by: Renée Lou Jungo"
-author: "Renee Lou Jungo"
+author: "Renée Lou Jungo"
 ---
 Seit dem ich geboren bin, wurde ich vermessen. 3.3kg wog ich bei meiner Geburt. Doch meine Eltern kannten mich schon zuvor. Als einen blassen Geist der im Bauch herum schwebt, minutiös betrachtet und analysiert.
 
