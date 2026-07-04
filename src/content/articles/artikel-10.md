@@ -1,5 +1,5 @@
 ---
-title: "A playlist for certain death // A playlist for life"
+title: "A playlist for a certain death // A playlist for a life"
 date: "2026-07-04"
 titleImage: "/media/titel_artikel10.jpeg"
 titleImageCredit: "Image by: Kian Matine"
