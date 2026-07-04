@@ -7,8 +7,8 @@ coverImage: "/media/titel_artikel10.jpeg"
 imageCredit: "Image by: Kian Matine"
 author: "Kian Matine"
 ---
-On an island on the coast of ireland i found a sheep laying.
-before it died it found its last shelter.
+On an island on the coast of ireland i found a sheep laying.<br>
+before it died it found its last shelter.<br>
 it was like it needed a safe place and the last comfort to die.
 
 <a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death" target="_blank">A playlist for a certain death</a>
