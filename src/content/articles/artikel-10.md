@@ -11,6 +11,6 @@ On an island on the coast of ireland i found a sheep laying.
 before it died it found its last shelter.
 it was like it needed a safe place and the last comfort to die.
 
-<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death" target="_blank">go to playlist 1</a>
+<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death" target="_blank">A playlist for a certain death</a>
 
-<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-a-life" target="_blank">go to playlist 2</a>
+<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-a-life" target="_blank">A playlist for a life</a>
