@@ -13,7 +13,7 @@ it was like it needed a safe place and the last comfort to die.
 
 &nbsp;
 
-A playlist for a certain death
+### A playlist for a certain death
 
 - Coil + Zos Kia + Marc Almond — How To Destroy Angels (Excerpt)
 - ALOQUA — His Name Is Alive - Her Eyes Were Huge Things
@@ -28,7 +28,7 @@ A playlist for a certain death
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-A playlist for a life
+### A playlist for a life
 
 - Kali Malone — Spectacle Of Ritual
 - ☆7571 — Obstacle Under The Sun (Alternative Version)
