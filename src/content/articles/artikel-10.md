@@ -11,7 +11,7 @@ On an island on the coast of ireland i found a sheep laying.
 before it died it found its last shelter.
 it was like it needed a safe place and the last comfort to die.
 
-A playlist for a certain death
+<p style="text-align: center;">A playlist for a certain death</p>
 
 - Coil + Zos Kia + Marc Almond — How To Destroy Angels (Excerpt)
 - ALOQUA — His Name Is Alive - Her Eyes Were Huge Things
@@ -24,7 +24,9 @@ A playlist for a certain death
 - Jozef van Wissem — What The Eternal End Is
 - Jocelyn Pook — Masked Ball (Eyes Wide Shut)
 
-A playlist for a life
+<br><br><br><br><br>
+
+<p style="text-align: center;">A playlist for a life</p>
 
 - Kali Malone — Spectacle Of Ritual
 - ☆7571 — Obstacle Under The Sun (Alternative Version)
@@ -32,6 +34,8 @@ A playlist for a life
 - Xandi van Dijk — Morton Feldman: Rothko Chapel (live)
 - Song Hyeon Kim — Variations for the Healing of Arinushka : Arvo Pärt
 
-[A playlist for a certain death →](https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death)
+<br><br><br><br><br>
 
-[A playlist for a life →](https://soundcloud.com/user-291141871/sets/a-playlist-for-a-life)
+[Go to playlist 1 →](https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death)
+
+[Go to playlist 2 →](https://soundcloud.com/user-291141871/sets/a-playlist-for-a-life)
