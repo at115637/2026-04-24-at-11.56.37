@@ -34,8 +34,8 @@ A playlist for a life
 4\. Xandi van Dijk — Morton Feldman: Rothko Chapel (live)<br>
 5\. Song Hyeon Kim — Variations for the Healing of Arinushka : Arvo Pärt
 
-<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death" target="_blank">A playlist for a certain death</a>
+<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-certain-death" target="_blank">Go to playlist 1</a>
 
-<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-a-life" target="_blank">A playlist for a life</a>
+<a href="https://soundcloud.com/user-291141871/sets/a-playlist-for-a-life" target="_blank">Go to playlist 2</a>
 
 </div>
