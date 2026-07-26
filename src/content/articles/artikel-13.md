@@ -8,8 +8,6 @@ coverImage: "/media/titel_artikel13.jpeg"
 imageCredit: "Image by: Philipp Burwinkel"
 author: "Philipp Burwinkel"
 ---
-2: On the Longing of Child and Mother in Louis Malle's Murmur of the Heart
-
 Disturbed illusionistic sadistic personalities, disfigured alienated bodies, murderous violent hillbillies, hermitic neglect, entire genetically defective villages, moral absence, degenerate dimwits define the pop-cultural idea of that building block leading predominantly to thriller and horror: incest. Well-known films like Hitchcock's Psycho, The Texas Chain Saw Massacre, the Wrong Turn franchise, The Crimson Rivers are merely examples of a gleefully perverted fascination with sex between blood relatives and its consequences. Often incest is not even a primary motif but directly implied through visual connotation, one that seems to have been trained into us as a plausible driver of a holistic brutalization.
 
 Louis Malle's Murmur of the Heart presents a different scenario: a very wealthy bourgeois family in 1950s Dijon, France. The weather is mostly fine, the sun is shining, jazz is playing, the cat is named Joseph, there is a great deal of laughter. The protagonist is the fourteen-year-old intellectually rebellious Laurent Chevalier. Befitting the theme follows his originally Italian mother Clara, who appears very bohemian within this (miserably) strict and well-bred thought family, introducing a certain nonconformity. There are two even more rebellious brothers, Marc and Thomas, whom Laurent admires and who draw him into all manner of mischief and precocious encounters with a prostitute. Being political and intellectual goes hand in hand in this film with being coquettish and frivolous.
