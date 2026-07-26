@@ -1,5 +1,6 @@
 ---
 title: "My Beautiful Incest"
+subtitle: "2: On the Longing of Child and Mother in Louis Malle's Murmur of the Heart"
 date: "2026-07-26"
 titleImage: "/media/titel_artikel13.jpeg"
 titleImageCredit: "Image by: Philipp Burwinkel"
@@ -38,5 +39,9 @@ For these gut feelings I admire Malle greatly. His films are honest but daring, 
 From The Criterion Collection, Slavoj Žižek was asked, in the series Closet Picks, about his favorite films. He chose this one among others, saying:
 
 *„Murmur of the Heart. It's one of the nice gentle french movies - where you have incest. It is portrayed as a nice secret between mother and son. I like this."*
+
+&nbsp;
+
+&nbsp;
 
 *My Beautiful is a recurring column, devoted to Philipp Burwinkel's subjective engagement with excerpts from film, literature, art and music that affect him because of their sublime character. Each „something" is expressed in a form that is loosely essayistic, yet otherwise free. By situating within a broader thematic field, the column gradually attempts a possible reinterpretation of the semiotic idea governing its meaning.*
