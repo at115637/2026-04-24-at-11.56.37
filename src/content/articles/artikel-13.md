@@ -2,9 +2,9 @@
 title: "My Beautiful Incest"
 subtitle: "2: On the Longing of Child and Mother in Louis Malle's Murmur of the Heart"
 date: "2026-07-26"
-titleImage: "/media/titel_artikel13b.jpeg"
+titleImage: "/media/titel_artikel13d.jpeg"
 titleImageCredit: "Image by: Philipp Burwinkel"
-coverImage: "/media/titel_artikel13b.jpeg"
+coverImage: "/media/titel_artikel13d.jpeg"
 imageCredit: "Image by: Philipp Burwinkel"
 author: "Philipp Burwinkel"
 ---
