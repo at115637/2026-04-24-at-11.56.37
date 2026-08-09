@@ -2,7 +2,7 @@
 title: "Hingabe"
 date: "2026-08-09"
 titleImage: "/media/titel_artikel15.jpeg"
-titleImageCredit: "Image by: Lukas"
+titleImageCredit: "Image by: Lukas Pretzsch"
 coverImage: "/media/titel_artikel15.jpeg"
 imageCredit: "Image by: Lukas Pretzsch"
 author: "Lukas Pretzsch"
