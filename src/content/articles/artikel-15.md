@@ -4,8 +4,8 @@ date: "2026-08-09"
 titleImage: "/media/titel_artikel15.jpeg"
 titleImageCredit: "Image by: Lukas"
 coverImage: "/media/titel_artikel15.jpeg"
-imageCredit: "Image by: Lukas"
-author: "Lukas"
+imageCredit: "Image by: Lukas Pretzsch"
+author: "Lukas Pretzsch"
 ---
 <figure>
   <img src="/media/Artikel15_01.jpeg" alt="" />
