@@ -30,7 +30,7 @@ More than half of the human body is made of water. There are also all kinds of m
 
 <figure>
   <img src="/media/Artikel17_04b.jpeg" alt="" />
-  <figcaption>Image by: Bingxu Ren</figcaption>
+  <figcaption>Drawing by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
@@ -60,7 +60,7 @@ More than half of the human body is made of water. There are also all kinds of m
 
 <figure>
   <img src="/media/Artikel17_10b.jpeg" alt="" />
-  <figcaption>Image by: Bingxu Ren</figcaption>
+  <figcaption>Drawing by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
