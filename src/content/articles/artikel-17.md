@@ -1,9 +1,9 @@
 ---
 title: "After the flooding"
 date: "2026-08-23"
-titleImage: "/media/titel_artikel17.jpeg"
+titleImage: "/media/titel_artikel17b.jpeg"
 titleImageCredit: "Image by: Bingxu Ren"
-coverImage: "/media/titel_artikel17.jpeg"
+coverImage: "/media/titel_artikel17b.jpeg"
 imageCredit: "Image by: Bingxu Ren"
 author: "Bingxu Ren"
 ---
@@ -14,56 +14,56 @@ I was riding an electric motorcycle through the flooded streets. The murky water
 More than half of the human body is made of water. There are also all kinds of metabolic by-products and waste inside us, certain acids, sterols and so on. Perhaps, at that very moment, there was some indescribably intimate connection between me and the filthy water that had submerged the city. I was part of it. Water is always cruel and fascinating. For me, perhaps it is even more fascinating than that. One phenomenon I have always been interested in is the way water acts upon space when it appears within it. This is something that I think Tarkovsky's Stalker captures particularly well. One of my favorite scenes is when the three protagonists enter the Zone and lie down in the wet trenches, beside the water and the openings of the drainage tunnels. I can imagine the distortion and discomfort of lying on that wet ground while wearing heavy winter clothes. A German Sheperd walks through the water, leaving behind those sharp slapping sounds. There is another scene when the three of them approach the center of the Zone, walking through enormous, damp pipes. The sounds of water dripping and flowing across the ground are exaggerated almost infinitely, transformed into something suffocating and mysterious. The sound of leather shoes stepping into puddles is concrete. It has a shape. It is roaring. I thought about all of these things while I was standing in the bathroom and taking a shower. I have always thought about my work while taking a shower. I don't know why, but a shower is always accompanied by a strangely exciting sense of space. The steam fills the entire small bathroom, and somehow it is only within an environment like this that I can think about my work and about myself. I photographed some plastic bottles. They contained all kinds of drinks and liquids, and at that particular moment they seemed to me like perhaps the best works and the best evidence: lightweight, movable, full of a kind of vitality, and completely ordinary. After returning from Germany to China, I have once again started throwing plastic bottles away casually. In Germany, I would keep them and return them for the deposit money. And now, once again, it has started to rain heavily.
 
 <figure>
-  <img src="/media/Artikel17_01.jpeg" alt="" />
+  <img src="/media/Artikel17_01b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_02.jpeg" alt="" />
+  <img src="/media/Artikel17_02b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_03.jpeg" alt="" />
+  <img src="/media/Artikel17_03b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_04.jpeg" alt="" />
+  <img src="/media/Artikel17_04b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_05.jpeg" alt="" />
+  <img src="/media/Artikel17_05b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_06.jpeg" alt="" />
+  <img src="/media/Artikel17_06b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_07.jpeg" alt="" />
+  <img src="/media/Artikel17_07b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_08.jpeg" alt="" />
+  <img src="/media/Artikel17_08b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_09.jpeg" alt="" />
+  <img src="/media/Artikel17_09b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_10.jpeg" alt="" />
+  <img src="/media/Artikel17_10b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/Artikel17_11.jpeg" alt="" />
+  <img src="/media/Artikel17_11b.jpeg" alt="" />
   <figcaption>Image by: Bingxu Ren</figcaption>
 </figure>
