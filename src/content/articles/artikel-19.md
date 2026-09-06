@@ -1,5 +1,5 @@
 ---
-title: "Claire's extinction diaries"
+title: "Claire's Extinction Diaries"
 date: "2026-09-06"
 titleImage: "/media/titel_artikel19.jpeg"
 titleImageCredit: ""
