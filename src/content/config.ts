@@ -12,6 +12,7 @@ const articles = defineCollection({
     author: z.string().optional(),
     headerText: z.string().optional(),
     hideTitleImage: z.boolean().optional(),
+    titleVideo: z.string().optional(),
   }),
 });
 
