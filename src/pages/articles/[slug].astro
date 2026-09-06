@@ -54,8 +54,8 @@ const formattedDate = dateObj.toLocaleDateString('de-DE', {
         </div>
       )}
 
-      {/* Titelbild — nur wenn vorhanden und kein headerText */}
-      {!article.data.headerText && article.data.titleImage && (
+      {/* Titelbild — nur wenn vorhanden, kein headerText, und nicht versteckt */}
+      {!article.data.headerText && article.data.titleImage && !article.data.hideTitleImage && (
         <div class="cover-wrap">
           <div class="cover">
             <img src={article.data.titleImage} alt={article.data.title} loading="lazy" decoding="async" />
