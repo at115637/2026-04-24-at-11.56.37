@@ -11,6 +11,7 @@ const articles = defineCollection({
     imageCredit: z.string().optional(),
     author: z.string().optional(),
     headerText: z.string().optional(),
+    hideTitleImage: z.boolean().optional(),
   }),
 });
 
