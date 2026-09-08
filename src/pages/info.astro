@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
   <div class="sidebar">
     <ul>
       <li><a data-astro-reload href="/search" class="nav-link">SEARCH</a></li>
-      <li><a data-astro-reload href="/articles" class="nav-link">ARTICLES</a></li>
+      <li><a data-astro-reload href="/articles" class="nav-link">CONTRIBUTIONS</a></li>
       <li><a data-astro-reload href="/newsletter" class="nav-link">NEWSLETTER</a></li>
       <li><a data-astro-reload href="/publications" class="nav-link">PUBLICATIONS</a></li>
       <li><a data-astro-reload href="/info" class="nav-link active">INFO</a></li>
@@ -14,7 +14,7 @@ import Base from '../layouts/Base.astro';
   <div class="mobile-header">
     <nav class="mobile-nav">
       <a data-astro-reload href="/search">SEARCH</a>
-      <a data-astro-reload href="/articles">ARTICLES</a>
+      <a data-astro-reload href="/articles">CONTRIBUTIONS</a>
       <a data-astro-reload href="/newsletter">NEWS.</a>
       <a data-astro-reload href="/publications" >PUBL.</a>
       <a data-astro-reload href="/info" class="active">INFO</a>
@@ -195,7 +195,7 @@ import Base from '../layouts/Base.astro';
       padding: 38px 4px 0;
     }
     .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 9px; color: #aaa; letter-spacing: 0; text-decoration: none; transition: color 0.15s; }
-    .mobile-nav a:hover { color: #111; }
+    .mobile-nav a:hover { color: #111; font-style: italic; }
     .mobile-nav a.active { color: #111; }
     .mobile-nav a.disabled { color: #e0e0e0; pointer-events: none; }
     .info-section { padding: 20px 20px 80px; }
