@@ -1,5 +1,5 @@
 ---
-title: "Baden"
+title: "How to take a Bath"
 date: "2026-09-20"
 titleImage: "/media/titel_artikel21.jpeg"
 titleImageCredit: "Image by: Lukas Otrzonsek"
@@ -7,23 +7,23 @@ coverImage: "/media/titel_artikel21.jpeg"
 imageCredit: "Image by: Lukas Otrzonsek"
 author: "Lukas Otrzonsek"
 ---
-**Das Haus**
+<u>Das Haus</u>
 
 Das Badezimmer ist an geeigneter Stelle platziert. Ein Westfenster, sowie die Separation zur Toilette muss hergestellt worden sein.
 
-**Das Badezimmer**
+<u>Das Badezimmer</u>
 
 Die Badewanne steht frei auf Füßen, wird nicht als Dusche genutzt, verfügt aber dennoch über eine Brausengarnitur. Der Wasserauslass liegt in der Mitte einer der langen Seiten. Läge dieser an einer der kurzen Seiten, entstünde eine Unausgeglichenheit während des «erotischen Bades»¹. Zudem wäre die Verteilung des nachträglich zugeführten Warmwassers unbefriedigend.
 
-**Der Tag**
+<u>Der Tag</u>
 
 Conditio sine qua non: ausreichende Hydration.
 
-**Die Umgebung**
+<u>Die Umgebung</u>
 
 Das Baden findet im Zustand absoluter Verantwortungslosigkeit statt. Sollten sich weitere Menschen in den Räumlichkeiten befinden, muss im Vorfeld dafür gesorgt worden sein, dass sich diese zufrieden aber leise beschäftigen, sodass die Abwesenheit des Badenden vergessen wird. Es wurde darauf hingewiesen, dass das Betreten des Badezimmers nur im Notfall gestattet ist.
 
-**Vorbereitung**
+<u>Vorbereitung</u>
 
 Das Baderitual markiert das Ende, seltener den Anfang² eines Tages. Das Prozedere der Vorbereitung des Bades beginnt in beiden Fällen frühestens bei einsetzender Dämmerung.
 
@@ -33,7 +33,7 @@ Das Westfenster ist geöffnet, die Tür geschlossen. Kalte Frischluft ist notwen
 
 Warum das Westfenster? Im Westen geht die Sonne unter. Kein Kunstlicht. Der Körper befindet sich zwischen Fenster und Lichtquelle³. Unbegrenzt Warmwasser steht zur Verfügung.⁴ Die angenehme, aber doch etwas zu kalte Wassertemperatur im Mutterleib wird überschritten.⁵
 
-**Wasser Marsch**
+<u>Wasser Marsch</u>
 
 Selbstverständlich läuft das Wasser aus dem Hahn in die Badewanne. Ist das Badewasser daumenhoch eingelaufen, wurde der Badezusatz⁶ beigefügt und mit der Brause gleichmäßig verteilt. Die Badeform bedingt den Badezusatz. Der Wasserzulauf wurde in seinen ursprünglichen Zustand versetzt. Noch angekleidet, besteht die letzte Möglichkeit zum Verrichten der Notdurft.
 
