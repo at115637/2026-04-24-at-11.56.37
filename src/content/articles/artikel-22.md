@@ -5,7 +5,7 @@ titleImage: "/media/titel_artikel22.jpeg"
 titleImageCredit: "Everytime © The Barricades, Panama Film"
 coverImage: "/media/titel_artikel22.jpeg"
 imageCredit: "Everytime © The Barricades, Panama Film"
-author: "Alissa"
+author: "Alissa Dornier"
 ---
 Somehow, people keep saying they like going to the cinema but rarely ever go. Cinemas are such precious places. And if you've never been to a cinema all alone, you should definitely try it. It's such an incomparable feeling, leaving the cinema after an intensive film screening that hopefully took you to a completely different world, stepping outside the door, it's already dark and you enter your own reality again without speaking to anybody in between. You know it when you've felt it.
 
